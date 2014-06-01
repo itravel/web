@@ -1,0 +1,27 @@
+<div class="scrollable">
+    <div class="scrollable-content">
+
+        <div class="list-group">
+            <div class="list-group-item media" ng-repeat="activity in activities"
+                    style="background-image: url('{{activity.images[0]}}');background-size:cover;height:270px;">
+
+                <div style="position: absolute; bottom: 0px;color: #ffffff;">
+                    <h3>{{activity.name}}</h3>
+                    <h5>{{activity.location}}</h5>
+                </div>
+                <div style="position: absolute; bottom: 0px; right:20px; color: #ffffff;">
+                    <h2>￥{{activity.price_adult}}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="navbar navbar-app navbar-absolute-bottom">
+    <div class="btn-group justified">
+        <a href="#/route1" class="btn btn-navbar btn-icon-only">离我最近</a>
+        <a href="#/route2" class="btn btn-navbar btn-icon-only">人气最高</a>
+        <a href="#/route2" class="btn btn-navbar btn-icon-only">分类查看</a>
+    </div>
+</div>

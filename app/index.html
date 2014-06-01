@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>什么值得玩</title>
+    <meta name="description" content="">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css">
+    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="app">
+
+
+<!-- Sidebars -->
+
+<div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar">
+    <h1 class="app-name">什么值得玩</h1>
+
+    <div class="scrollable">
+        <div class="scrollable-content">
+            <div class="list-group" toggle="off" bubble target="mainSidebar">
+                <a class="list-group-item" href="#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+                <!-- ... -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div ng-include="'views/sidebar-right/location.html'" class="sidebar sidebar-right" toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div>
+
+<div class="app">
+
+    <!-- Navbars -->
+    <div class="navbar navbar-app navbar-absolute-top">
+
+        <div class="navbar-brand navbar-brand-center" yield-to="title">
+            <span>什么值得玩</span>
+        </div>
+
+        <div class="btn-group pull-left">
+            <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="btn-group pull-right" yield-to="navbarAction">
+
+        </div>
+    </div>
+
+    <!-- App Body -->
+    <div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading">
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+
+        <ng-view class="app-content" ng-hide="loading"></ng-view>
+    </div>
+</div>
+
+
+<!-- build:js scripts/libs.js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/plugins.js -->
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<!-- endbuild -->
+
+<!-- build:js scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/controllers/location.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<div class="scrollable" ng-controller="LocationCtrl">
+    <div class="scrollable-content">
+        <div class="list-group" toggle="off" bubble target="rightSidebar">
+
+            <a class="list-group-item media" href="" ng-repeat="location in locations"
+               ng-click="select(location)">
+                {{location}}
+            </a>
+        </div>
+    </div>
+
+    <div content-for="navbarAction">
+        <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
+            <i class="fa fa-map-marker"></i> {{selectedLocation}}
+        </div>
+    </div>
+</div>
