@@ -5,6 +5,8 @@
         "angular": "1.2.16",
         "angular-route": "1.2.16",
         "angular-touch": "1.2.16",
-        "mobile-angular-ui": "*"
+        "mobile-angular-ui": "*",
+        "underscore": "~1.6.0",
+        "moment": "~2.6.0"
     }
 }

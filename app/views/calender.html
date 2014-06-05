@@ -1,0 +1,33 @@
+<div class="scrollable calender" style="background-color: #2f3550;">
+    <div class="scrollable-content">
+        <div class="list-group">
+            <div class="list-group-item" style="background-color: transparent;">
+                <div calender date="date" month="month">
+
+                </div>
+            </div>
+            <div ng-repeat="activity in selectedActivities"
+                 ng-click="goToDetail(activity.id)"
+                 class="list-group-item media activity"
+                 style="background-color: transparent; border-bottom-style: dashed; cursor: pointer;">
+                <div class="pull-left" style="margin-top: 6px;">
+                    <div class="circle">节日</div>
+                </div>
+                <div class="pull-right" style="margin-top: 6px;">
+                    <i class="fa fa-angle-right fa-3x text-primary"></i>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading" style="color: #ffffff;">{{activity.name}}</h3>
+                    <div>
+                        <i class="fa fa-star" style="color: #339966;"></i>
+                        <i class="fa fa-star" style="color: #339966;"></i>
+                        <i class="fa fa-star-half-o" style="color: #339966;"></i>
+                        <i class="fa fa-star-o" style="color: #339966;"></i>
+                        <i class="fa fa-star-o" style="color: #339966;"></i>
+                        <span style="color: #33cc33;">125评论</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

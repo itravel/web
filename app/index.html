@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>什么值得玩</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css">
     <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css">
+    <link rel="stylesheet" href="vendors/bootstrap-datepicker/css/datepicker3.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
@@ -28,6 +29,7 @@
         <div class="scrollable-content">
             <div class="list-group" toggle="off" bubble target="mainSidebar">
                 <a class="list-group-item" href="#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+                <a class="list-group-item" href="#/calender">Calender <i class="fa fa-chevron-right pull-right"></i></a>
                 <!-- ... -->
             </div>
 
@@ -35,7 +37,8 @@
     </div>
 </div>
 
-<div ng-include="'views/sidebar-right/location.html'" class="sidebar sidebar-right" toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div>
+<div ng-include="'views/sidebar-right/location.html'" class="sidebar sidebar-right" toggleable
+     parent-active-class="sidebar-right-in" id="rightSidebar"></div>
 
 <div class="app">
 
@@ -69,10 +72,15 @@
 
 
 <!-- build:js scripts/libs.js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js"></script>
+<script src="vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="vendors/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js"></script>
+<script src="bower_components/moment/min/moment-with-langs.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
 <!-- endbuild -->
 
 <!-- build:js scripts/plugins.js -->
@@ -83,8 +91,13 @@
 
 <!-- build:js scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/home.js"></script>
-<script src="scripts/controllers/location.js"></script>
+
+<script src="scripts/controllers/home.c.js"></script>
+<script src="scripts/controllers/location.c.js"></script>
+<script src="scripts/controllers/calender.c.js"></script>
+<script src="scripts/controllers/activity.c.js"></script>
+
+<script src="scripts/directives/calender.d.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -5,8 +5,10 @@ angular.module('app', ['ngRoute', 'ngTouch', 'mobile-angular-ui']);
 angular.module('app')
     .config(['$routeProvider', function($routeProvider) {
 
-        $routeProvider.
-            when('/', {templateUrl: 'views/home.html', controller: 'HomeCtrl'})
+        $routeProvider
+            .when('/', {templateUrl: 'views/home.html', controller: 'HomeCtrl'})
+            .when('/calender', {templateUrl: 'views/calender.html', controller: 'CalenderCtrl'})
+            .when('/activities/:id', {templateUrl: 'views/activity.html', controller: 'ActivityCtrl'})
 //            otherwise({templateUrl: 'views/main.html',   controller: 'MainCtrl'});
     }]);
 

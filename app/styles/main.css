@@ -1,0 +1,55 @@
+.list-group-item .datepicker-inline {
+    width: 100%;
+}
+
+.list-group-item .datepicker-inline table{
+    width: 100%;
+}
+
+.datepicker .datepicker-switch {
+    color: #ffffff;
+}
+
+.datepicker .prev {
+    color: #ffffff;
+}
+
+.datepicker .next {
+    color: #ffffff;
+}
+
+.datepicker .dow {
+    color: #ffffff;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+}
+
+.datepicker .day .circle {
+    border: 2px solid transparent;
+    border-radius: 15px;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    margin: 0 auto;
+    color: #fff;
+    padding-top: 4px;
+}
+
+.datepicker .day.old .circle, .day.new .circle {
+    color: #666666;
+}
+
+.datepicker .day.active .circle {
+    border: 2px solid #36cd36;
+}
+
+.calender .activity .circle {
+    background-color: green;
+    border-radius: 20px;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    margin: 0 auto;
+    color: #fff;
+    padding-top: 10px;
+}
