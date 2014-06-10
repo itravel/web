@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.list-group-item .datepicker-inline table{
+.list-group-item .datepicker-inline table {
     width: 100%;
 }
 
@@ -52,4 +52,26 @@
     margin: 0 auto;
     color: #fff;
     padding-top: 10px;
+}
+
+.activity .detail .detail-item {
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.activity .detail .detail-item h2{
+    font-size: 18px;
+}
+
+.activity .detail .detail-item p{
+    color: #b4b4b4;
+}
+
+.activity .detail .detail-item .tag{
+    border: 1px solid #339966;
+    border-radius: 5px;
+    color: #339966;
+    display: inline-block;
+    padding: 5px 10px;
 }
