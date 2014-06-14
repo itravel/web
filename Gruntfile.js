@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: '../dist'
+        dist: './cordova/www'
     };
 
     try {
@@ -172,8 +172,8 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                        '<%= yeoman.dist %>/styles/{,*/}*.css'
+                        //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                     ]
                 }
             }
@@ -238,8 +238,6 @@ module.exports = function (grunt) {
                         src: [
                             '*.{ico,png,txt}',
                             '.htaccess',
-                            'bower_components/es5-shim/es5-shim.js',
-                            'bower_components/json3/lib/json3.min.js',
                             'vendors/**/*',
                             'views/**/*',
                             'images/{,*/}*.{gif,webp,png,jpg}'
@@ -247,26 +245,10 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: '<%= yeoman.app %>/bower_components/bootstrap/dist',
+                        cwd: '<%= yeoman.app %>/bower_components/mobile-angular-ui/dist',
                         dest: '<%= yeoman.dist %>',
                         src: [
                             'fonts/*'
-                        ]
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/bower_components/jQuery-contextMenu/src/images',
-                        dest: '<%= yeoman.dist %>/styles/images',
-                        src: [
-                            '*'
-                        ]
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/vendors/multiple-select/',
-                        dest: '<%= yeoman.dist %>/styles/',
-                        src: [
-                            '*.png'
                         ]
                     },
                     {
@@ -283,27 +265,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= yeoman.app %>/bower_components/bootstrap/dist/css',
+                        cwd: '<%= yeoman.app %>/bower_components/mobile-angular-ui/dist/css',
                         dest: '.tmp/styles/',
-                        src: 'bootstrap.css'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/bower_components/ng-table',
-                        dest: '.tmp/styles/',
-                        src: 'ng-table.css'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/bower_components/jQuery-contextMenu/src',
-                        dest: '.tmp/styles/',
-                        src: 'jquery.contextMenu.css'
-                    },
-                    {
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/vendors/bootstrap-datetimepicker-bs3',
-                        dest: '.tmp/styles/',
-                        src: 'bootstrap-datetimepicker.min.css'
+                        src: [ 'mobile-angular-ui-base.css', 'mobile-angular-ui-desktop.css' ]
                     },
                     {
                         expand: true,
