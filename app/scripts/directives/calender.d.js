@@ -29,6 +29,13 @@ angular.module('app')
                     })
                 ;
 
+                scope.$on('prevMonth', function() {
+                    element.find('.datepicker-days .prev').click();
+                });
+
+                scope.$on('nextMonth', function() {
+                    element.find('.datepicker-days .next').click();
+                });
             }
         };
     }]);

@@ -2,7 +2,9 @@
     <div class="scrollable-content">
         <div class="list-group">
             <div class="list-group-item" style="background-color: transparent;">
-                <div calender date="date" month="month">
+                <div calender date="date" month="month"
+                     ng-swipe-left="changeMonth('nextMonth')"
+                     ng-swipe-right="changeMonth('prevMonth')">
 
                 </div>
             </div>

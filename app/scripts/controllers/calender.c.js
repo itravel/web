@@ -30,6 +30,10 @@ angular.module('app')
 
         });
 
+        $scope.changeMonth = function (type) {
+            $scope.$broadcast(type);
+        }
+
         $scope.goToDetail = function (id) {
             $location.url('/activities/' + id);
         }

@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>什么值得玩</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -70,7 +69,7 @@
     </div>
 </div>
 
-
+<script src="cordova.js"></script>
 <!-- build:js scripts/libs.js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -98,6 +97,13 @@
 <script src="scripts/controllers/activity.c.js"></script>
 
 <script src="scripts/directives/calender.d.js"></script>
+
+<script src="scripts/filters/datetime.f.js"></script>
+
+<script src="scripts/services/activity.s.js"></script>
+
+<script src="scripts/daos/base_http.js"></script>
+<script src="scripts/daos/activity_dao.js"></script>
 <!-- endbuild -->
 </body>
 </html>

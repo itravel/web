@@ -5,11 +5,11 @@
                  style="background-image: url('{{activity.images[0]}}');background-size:cover;height:200px;">
 
                 <div style="position: absolute; bottom: 0px;color: #ffffff;">
-                    <h3>{{activity.name}}</h3>
-                    <h5>{{activity.location}}</h5>
+                    <h3>{{activity.title}}</h3>
+                    <h5>{{activity.address}}</h5>
                 </div>
                 <div style="position: absolute; bottom: 0px; right:20px; color: #ffffff;">
-                    <h2>￥{{activity.price_adult}}</h2>
+                    <h2>￥{{activity.fee}}</h2>
                 </div>
             </div>
 
@@ -17,11 +17,11 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <i class="fa fa-users"></i>
-                        <span>150-200</span>
+                        <span>{{activity.scale}}</span>
                     </div>
                     <div class="col-xs-4">
                         <i class="fa fa-clock-o"></i>
-                        <span>18:00-21:00</span>
+                        <span>{{activity.startTime | datetimeFormat : 'HH:hh'}} ~ {{activity.endTime | datetimeFormat : 'HH:hh'}}</span>
                     </div>
                     <div class="col-xs-4">
                         <i class="fa fa-calendar"></i>
@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-xs-10">
                                 <h2>活动地址</h2>
-                                <p>丽江市大研古镇四方街广场</p>
+                                <p>{{activity.address}}</p>
                             </div>
                             <div class="col-xs-2">
                                 <i class="fa fa-map-marker fa-4x"></i>
@@ -51,14 +51,13 @@
                     </div>
                     <div class="col-xs-12 detail-item">
                         <h2>活动内容</h2>
-                        <p>参与火把节的选人仪式，头梳英雄结，佩带英雄带和宝剑，身披黑色羊毛斗篷，手牵骏马参加祭神仪式。在祭神广场进行集会，唱歌跳舞，观看赛马、斗牛、摔跤。</p>
+                        <p>{{activity.abstractContent}}</p>
                         <div class="pull-right"><span class="badge" style="">●●●</span></div>
                     </div>
                     <div class="col-xs-12 detail-item">
                         <h2>活动标签</h2>
                         <div>
-                            <div class="tag">当地特色</div>
-                            <div class="tag">民族风情</div>
+                            <div class="tag" ng-repeat="tag in activity.tags.split(',')">{{tag}}</div>
                         </div>
                     </div>
                     <div class="col-xs-12 detail-item">
