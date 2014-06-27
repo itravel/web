@@ -1,8 +1,8 @@
 'use strict';
 
-//document.addEventListener('deviceready', function() {
-//    angular.bootstrap(document, ['app']);
-//}, false);
+document.addEventListener('deviceready', function() {
+    angular.bootstrap(document, ['app']);
+}, false);
 
 angular.module('app', ['ngRoute', 'ngTouch', 'mobile-angular-ui']);
 

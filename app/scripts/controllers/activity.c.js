@@ -1,8 +1,7 @@
 angular.module('app')
-    .controller('ActivityCtrl', ['$scope', '$location', 'ActivityService',
-        function ($scope, $location, ActivityService) {
-            var params = $location.search(),
-                id = params.id;
+    .controller('ActivityCtrl', ['$scope', '$location', '$routeParams', 'ActivityService',
+        function ($scope, $location, $routeParams, ActivityService) {
+            var id = $routeParams.id;
 
             ActivityService.get(id).then(function(data){
                 $scope.activity = data;
