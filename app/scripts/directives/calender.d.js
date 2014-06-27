@@ -5,7 +5,8 @@ angular.module('app')
             restrict: 'EA',
             scope: {
                 date: '=date',
-                month: '=month'
+                month: '=month',
+                activitiesGroup: '=activitiesGroup'
             },
             link: function (scope, element, attrs, controller) {
                 element.datepicker({
@@ -27,7 +28,30 @@ angular.module('app')
                             console.debug('selected month:', scope.month);
                         });
                     })
+                    .on('afterrender', function (){
+                        refreshHighlight();
+                    })
                 ;
+
+                scope.$watch('activitiesGroup', function(){
+                    refreshHighlight();
+                }, true);
+
+                var refreshHighlight = function () {
+                    _.forEach(_.keys(scope.activitiesGroup), function(date) {
+                        var elMaps = {};
+                        element.find('.day').each(function() {
+                            var el = $(this);
+                            if (!el.hasClass('old') && !el.hasClass('new')) {
+                                elMaps[el.find('.circle').html() - 0] = el;
+                            }
+                        })
+
+                        if (date.slice(0, -3) == scope.month) {
+                            elMaps[date.slice(-2) - 0].find('.marker').addClass('highlight');
+                        }
+                    });
+                }
 
                 scope.$on('prevMonth', function() {
                     element.find('.datepicker-days .prev').click();

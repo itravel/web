@@ -24,6 +24,10 @@
     border-top: 1px solid #aaa;
 }
 
+.datepicker .day {
+    position: relative;
+}
+
 .datepicker .day .circle {
     border: 2px solid transparent;
     border-radius: 15px;
@@ -41,6 +45,15 @@
 
 .datepicker .day.active .circle {
     border: 2px solid #36cd36;
+}
+
+.datepicker .day .highlight.marker {
+    border: 2px solid #36cd36;
+    border-radius: 2px;
+    top: 35px;
+    left: 49%;
+    width: 4px;
+    position: absolute;
 }
 
 .calender .activity .circle {

@@ -927,7 +927,8 @@
 										break;
 								}
 								this.fill();
-								break;
+                                this._trigger('afterrender', this.viewDate);
+                                break;
 							case 'today':
 								var date = new Date();
 								date = UTCDate(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
