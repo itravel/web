@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="list-group-item media" style="background: transparent;">
+            <div class="list-group-item media" style="background: transparent; padding: 20px 15px;">
                 <div class="row">
                     <div class="col-xs-4">
                         <i class="fa fa-users"></i>
@@ -25,7 +25,10 @@
                     </div>
                     <div class="col-xs-4">
                         <i class="fa fa-clock-o"></i>
-                        <span>{{activity.startTime | datetimeFormat : 'HH:hh'}}~{{activity.endTime | datetimeFormat : 'HH:hh'}}</span>
+                        <div style="display: inline-block; position: absolute; top: -10px; left: 30px;">
+                            <span>{{activity.startTime | datetimeFormat : 'MM-DD HH:hh'}}</span><br/>
+                            <span>{{activity.endTime | datetimeFormat : 'MM-DD HH:hh'}}</span>
+                        </div>
                     </div>
                     <div class="col-xs-4">
                         <i class="fa fa-calendar"></i>
