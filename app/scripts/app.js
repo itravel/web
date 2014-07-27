@@ -23,9 +23,6 @@ angular.module('app')
     }]);
 
 angular.module('app')
-    .constant('', 'http://115.28.129.120:8080/itravel/services/activities')
-
-angular.module('app')
     .run(['$rootScope', function($rootScope) {
         $rootScope.$on("$routeChangeStart", function(){
             $rootScope.loading = true;

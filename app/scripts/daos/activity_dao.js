@@ -5,14 +5,14 @@ angular.module('app')
             list: function () {
                 return $http({
                     method: 'GET',
-                    url: 'http://115.28.129.120/services/activities'
+                    url: '/services/activities'
                 });
             },
 
             get: function (id) {
                 return $http({
                     method: 'GET',
-                    url: 'http://115.28.129.120/services/activities/' + id
+                    url: '/services/activities/' + id
                 });
             }
         };
