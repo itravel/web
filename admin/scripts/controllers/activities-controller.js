@@ -56,6 +56,13 @@ angular.module('admin').controller(
 				    $scope.$on("saveActivity",function(d,data){
 				    	$scope.activity.editing=false;
 				    });
+                    $scope.create = function () {
+                        ActivityService.create().then(function(data){
+                            $scope.activity = data;
+                            $scope.activity.editing = true;
+
+                        });
+                    }
 					  
 
 				} ]);

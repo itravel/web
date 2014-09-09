@@ -76,6 +76,19 @@ angular.module('admin').factory('ActivityService',function($q,ActivityDao,Activi
         	}
 
             return d.promise;
-	    }
+	    },
+
+        create:function(){
+            var d = $q.defer();
+
+            ActivityDao.create({}).success(function(data){
+                d.resolve(data);
+            }).error(function(data){
+                d.reject(data);
+            });
+
+
+            return d.promise;
+        }
 	};
 });
