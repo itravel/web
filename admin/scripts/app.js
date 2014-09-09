@@ -7,14 +7,14 @@ var services = {
 };
 var adminModule = angular.module('admin', ['ngRoute','ui.bootstrap','blueimp.fileupload','textAngular']);
 adminModule.constant('serviceUrl',{
-	activities: "/itravel/admin/services/activities/",
-    tag: "/itravel/admin/services/tags",
-    category: "/itravel/admin/services/tags/categories",
-    lvye: "/itravel/admin/services/lvye_activity",
-    lvyeUnedit: "/itravel/admin/services/lvye_activity/unedit",
-    lvyeLock:"/itravel/admin/services/lvye_activity/lock",
-    douban:"/itravel/admin/services/douban",
-    doubanUnedit:"/itravel/admin/services/douban/unedit"
+	activities: "/services/activities/",
+    tag: "/services/tags",
+    category: "/services/tags/categories",
+    lvye: "/services/lvye_activity",
+    lvyeUnedit: "/services/lvye_activity/unedit",
+    lvyeLock:"/services/lvye_activity/lock",
+    douban:"/services/douban",
+    doubanUnedit:"/services/douban/unedit"
     	
 	
 });
@@ -87,30 +87,7 @@ function($scope, $http) {
         
     };
    
-   /* $scope.pre = function(){
-    	$scope.query_param.start-=1;
-    	if($scope.query_param.start<0){
-    		$scope.query_param.start = 0;
-    	}
-    	$http({
-            method: 'GET',
-            url: services.lvye_activity+"/unedit",
-            params: $scope.query_param
-        }).success(function(data) {
-            $scope.lvye_activities = data;
-        });
-    }
-    $scope.next = function(){
-    	$scope.query_param.start+=1;
-    	$http({
-            method: 'GET',
-            url: services.lvye_activity+"/unedit",
-            params: $scope.query_param
-        }).success(function(data) {
-            $scope.lvye_activities = data;
-        });
-    }*/
-    
+
 }).directive('bDatepicker',
 function() {
 
@@ -138,57 +115,6 @@ function() {
         }
     };
 })
-
-/*adminModule.controller('TagCtrl',
-function($scope, $http) {
-    $http.get(services.tag).success(function(data) {
-        $scope.tags = data;
-    });
-    $http.get(services.category).success(function(data) {
-        $scope.tagCategories = data;
-    });
-    $scope.save = function(tag) {
-        if (!tag) {
-            return
-        }
-        $http({
-            method: 'POST',
-            url: services.tag,
-            data: $.param(tag),
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-
-        }).success(function(data) {
-            $scope.tags.push(data);
-        });
-
-    };
-    $scope.clean = function() {
-        $scope.tag = null
-    };
-    $scope.saveCategory = function(tagCategory) {
-        if (!tagCategory) {
-            return
-        }
-        $http({
-            method: 'POST',
-            url: services.category,
-            data: $.param(tagCategory),
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-
-        }).success(function(data) {
-            console.log(data);
-            $scope.tagCategories.push(data)
-        });
-    };
-    $scope.cleanCategory = function() {
-        $scope.tagCategory = null
-    }
-
-})*/
 
 adminModule.config(['$routeProvider',
 function($routeProvider) {
