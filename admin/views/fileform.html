@@ -1,0 +1,43 @@
+<form class="fileupload" method="POST" enctype="multipart/form-data" url="/admin/services/images/activities"
+	data-file-upload="options" 
+	data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
+
+	<div class="row fileupload-buttonbar">
+
+		<div class="col-lg-7">
+			<!-- The fileinput-button span is used to style the file input field as button -->
+			<span class="btn btn-success fileinput-button"
+				ng-class="{disabled: disabled}"> <i
+				class="glyphicon glyphicon-plus"></i> <span>增加图片...</span> <input
+				type="file" name="images" multiple ng-disabled="isDisabled()" >
+			</span>
+			<button type="button" class="btn btn-primary start" ng-disabled="isDisabled()" 
+				data-ng-click="submit()">
+				<i class="glyphicon glyphicon-upload"></i> <span>全部上传</span>
+			</button>
+			<!-- The global file processing state -->
+			<span class="fileupload-process"></span>
+		</div>
+		<!-- The global progress state -->
+		<div class="col-lg-5 fade" data-ng-class="{in: active()}">
+			<!-- The global progress bar -->
+			<div class="progress progress-striped active"
+				data-file-upload-progress="progress()">
+				<div class="progress-bar progress-bar-success"
+					data-ng-style="{width: num + '%'}"></div>
+			</div>
+			<!-- The extended global progress state -->
+			<div class="progress-extended">&nbsp;</div>
+		</div>
+	</div>
+	<span ng-repeat="file in queue">
+		<span data-ng-switch data-on="!!file.thumbnailUrl">
+				<span class="preview" 
+					data-ng-switch-default
+					data-file-upload-preview="file">
+					
+				</span>
+				<button type="button" ng-click="file.$cancel()">删除</button>
+		</span>
+	</span>
+</form>
