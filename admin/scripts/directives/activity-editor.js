@@ -13,17 +13,17 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 		},
 
 		controller : function($scope, $element) {
-            $scope.activity = {};
-            var myDropzone = new Dropzone("div#myId", { url: serviceUrl.activityImages,addRemoveLinks :true,error:function(file,response){
+            var myDropzone = new Dropzone("div#myId", {paramName:"images", url: serviceUrl.activityImages,addRemoveLinks :true,error:function(file,response){
                 alert("上传图片失败");
             }});
             myDropzone.disable();
-
+            var images = [];
             myDropzone.on("success", function(data,xhr) {
-                console.log(xhr.imageNames)
                 $scope.activity.images.push(xhr.imageNames);
             });
-
+            myDropzone.on("removedfile",function(file,response){
+                $scope.activity.images.splice($scope.activity.images.indexOf(file.xhr.imageNames),1)
+            })
 
 			$scope.disabled = true;
             $scope.$watch('activity.editing',function(newValue,oldValue,scope){
@@ -79,7 +79,6 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 			};
 			// 保存到服务器
 			$scope.save = function(activity) {
-				
 				var newActivity = angular.copy(activity);
 //				newActivity.images = activity.images.join(",");
 				var selectedTags = [];
@@ -91,7 +90,6 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 				});
 
 				newActivity.tags = selectedTags;
-				console.log(newActivity)
 				ActivityService.save(newActivity).then(function(data){
 					$scope.$emit("saveActivity",true);
 					$scope.activity = data;
