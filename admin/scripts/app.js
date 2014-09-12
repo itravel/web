@@ -5,9 +5,10 @@ var services = {
     lvye_activity: "/admin/services/lvye_activity"
 
 };
-var adminModule = angular.module('admin', ['ngRoute','ui.bootstrap','blueimp.fileupload','textAngular']);
+var adminModule = angular.module('admin', ['ngRoute','ui.bootstrap','textAngular']);
 adminModule.constant('serviceUrl',{
 	activities: "/services/activities/",
+    activityImages:"/services/images/activities",
     tag: "/services/tags",
     category: "/services/tags/categories",
     lvye: "/services/lvye_activity",

@@ -40,7 +40,11 @@ function($rootScope,fileUpload) {
             };
             $scope.loadingFiles = false;
 
-
+            $scope.ff = function(file){
+                file.$cancel();
+                console.log($scope)
+                console.log(file);
+            }
 
             var generateFileObject = function generateFileObjects(objects) {
                 angular.forEach(objects,

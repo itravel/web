@@ -1,5 +1,5 @@
-angular.module('admin').directive('ngActivityForm', ['AdminService','TagService', 'ActivityService','fileUpload',
-    function(AdminService,TagService,ActivityService,fileUpload) {
+angular.module('admin').directive('ngActivityForm', ['AdminService','TagService', 'ActivityService','serviceUrl',
+    function(AdminService,TagService,ActivityService,serviceUrl) {
 	
 	return {
 		restrict : 'ACEM',
@@ -11,12 +11,33 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 			url:'=',
 			editable:'='
 		},
-		
+
 		controller : function($scope, $element) {
+            $scope.activity = {};
+            var myDropzone = new Dropzone("div#myId", { url: serviceUrl.activityImages,addRemoveLinks :true,error:function(file,response){
+                alert("上传图片失败");
+            }});
+            myDropzone.disable();
+
+            myDropzone.on("success", function(data,xhr) {
+                console.log(xhr.imageNames)
+                $scope.activity.images.push(xhr.imageNames);
+            });
+
+
 			$scope.disabled = true;
+            $scope.$watch('activity.editing',function(newValue,oldValue,scope){
+               if(newValue === true){
+                   myDropzone.enable();
+               }
+               else {
+                   myDropzone.disable();
+               }
+            });
 			$scope.$watch('ngModel',function(newVal,oldVal,scope){
 				if(newVal){
 					scope.activity = newVal;
+                    myDropzone.removeAllFiles();
 				}
 				// 获取活动的TAG
 				if($scope.TAGS){
@@ -87,15 +108,9 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 					$scope.message.content = data;
 					$element.find('#activityEditModal').modal("show");
 				});
-//				AdminService.saveActivity1(newActivity).then(function(data){
-//					$scope.activity = data;
-//					console.log($scope.activity);
-//					
-//				});
 
 			};
 
-			
 		}
 
 	}
