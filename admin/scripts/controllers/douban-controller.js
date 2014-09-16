@@ -1,8 +1,8 @@
 angular.module('admin')
 .controller(
 	'DoubanActivitiesCtrl',
-	['$scope', '$location', '$routeParams', 'AdminService','DoubanService',
-	 	function($scope, $location, $routeParams, AdminService,DoubanService) {
+	['$scope', '$location', '$routeParams', 'AdminService','DoubanService','ActivityService',
+	 	function($scope, $location, $routeParams, AdminService,DoubanService,ActivityService) {
 			console.log(AdminService.createActivityDO())
 			$scope.query_param = {"start": 0,"num": 1}
 			$scope.activity = {'tags':[],'images':[],'editing':false};
@@ -88,6 +88,10 @@ angular.module('admin')
 			    	});
 		    	}
 		    	else {
+                    ActivityService.create().then(function(data){
+                        $scope.activity.id = data.id;
+                        console.log($scope.activity);
+                    });
 		    		AdminService.startDoubanEdit($scope.activity.doubanId,'x').then(function(data){
 		    			$scope.activity.editing = true;
 		    		},function(data){

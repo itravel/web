@@ -2,7 +2,7 @@ angular.module('admin')
 .controller(
 	'LvyeActivitiesCtrl',
 	['$scope', 'AdminService','LvyeService','TagService','ActivityService',
-	 	function($scope, AdminService,LvyeService,TagService) {
+	 	function($scope, AdminService,LvyeService,TagService,ActivityService) {
 			TagService.getAll().then(function(data){});
 			$scope.current = 0;
 			$scope.number = 6;
@@ -12,7 +12,9 @@ angular.module('admin')
 		    	$scope.activities = data;
 			});
 		    $scope.detail = function(lvyeActivity){
-		    	$scope.activity = LvyeService.transform(lvyeActivity);
+                $scope.activity = LvyeService.transform(lvyeActivity);
+
+
 		    };
 		    $scope.$on("get",function(d,data){
 		    	LvyeService.getUneditDataPage(data.start,data.num).then(function(data) {
@@ -46,6 +48,10 @@ angular.module('admin')
 			    	});
 		    	}
 		    	else {
+                    ActivityService.create().then(function(data){
+                        $scope.activity.id = data.id;
+                        console.log($scope.activity);
+                    });
 		    		LvyeService.doEdit($scope.activity.lvyeId,'x').then(function(data){
 		    			$scope.activity.editing = true;
 		    		},function(data){
