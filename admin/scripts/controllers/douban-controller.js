@@ -60,19 +60,24 @@ angular.module('admin')
 			};
 			
 		    $scope.detail = $scope.go = function(douban_activity) {
-		    	$scope.activity = {'tags':[],'images':[]};
-		        $scope.activity.title = douban_activity.title;
-		        $scope.activity.startTime = douban_activity.startTime;
-		        $scope.activity.endTime = douban_activity.endTime;
-		        $scope.activity.depart= douban_activity.depart;
-		        $scope.activity.destination = douban_activity.destination;
-		        $scope.activity.sponsor = douban_activity.sponsor;
+                ActivityService.create().then(function(data){
+                    $scope.activity.id = data.id;
+                    $scope.activity = {'tags':[],'images':[]};
+                    $scope.activity.title = douban_activity.title;
+                    $scope.activity.startTime = douban_activity.startTime;
+                    $scope.activity.endTime = douban_activity.endTime;
+                    $scope.activity.depart= douban_activity.depart;
+                    $scope.activity.destination = douban_activity.destination;
+                    $scope.activity.sponsor = douban_activity.sponsor;
 //		        $scope.activity.scenerySpot = lvye_activity.scenic.split(" ").join(",");
-		        $scope.activity.lvyeId = douban_activity.id;
-		        $scope.activity.web = douban_activity.url;
-		        $scope.activity.content = douban_activity.content;
-		        $scope.activity.editing=false;
-		        $scope.activity.doubanId = douban_activity.id;
+                    $scope.activity.lvyeId = douban_activity.id;
+                    $scope.activity.web = douban_activity.url;
+                    $scope.activity.content = douban_activity.content;
+                    $scope.activity.editing=false;
+                    $scope.activity.doubanId = douban_activity.id;
+                    console.log($scope.activity);
+                });
+
 		    };
 		    $scope.$on("saveActivity",function(d,data){
 		    	$scope.activity.editing=false;
@@ -88,10 +93,7 @@ angular.module('admin')
 			    	});
 		    	}
 		    	else {
-                    ActivityService.create().then(function(data){
-                        $scope.activity.id = data.id;
-                        console.log($scope.activity);
-                    });
+
 		    		AdminService.startDoubanEdit($scope.activity.doubanId,'x').then(function(data){
 		    			$scope.activity.editing = true;
 		    		},function(data){
