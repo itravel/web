@@ -75,7 +75,7 @@
                 <tbody>
                 <tr ng-repeat="lvyeActivity in lvyeActivities">
                     <td>{{lvyeActivity.id}}</td>
-                    <td>{{lvyeActivity.title}}</td>
+                    <td><a href="{{lvyeActivity.url}}" target="_blank">{{lvyeActivity.title}}</a></td>
                     <td>
 
                         <div class="btn-group">
@@ -116,7 +116,7 @@
                 <tbody>
                 <tr ng-repeat="doubanActivity in doubanActivities">
                     <td>{{doubanActivity.id}}</td>
-                    <td>{{doubanActivity.title}}</td>
+                    <td><a href="{{doubanActivity.url}}" target="_blank"> {{doubanActivity.title}}</a></td>
                     <td>
 
                         <div class="btn-group">
