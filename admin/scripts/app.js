@@ -5,7 +5,7 @@ var services = {
     lvye_activity: "/admin/services/lvye_activity"
 
 };
-var adminModule = angular.module('admin', ['ngRoute','ui.bootstrap','textAngular']);
+var adminModule = angular.module('admin', ['blueimp.fileupload','ngRoute','ui.bootstrap','textAngular']);
 adminModule.constant('serviceUrl',{
 	activities: "/services/activities/",
     activityImages:"/services/images/activities",
@@ -121,8 +121,8 @@ adminModule.config(['$routeProvider',
 function($routeProvider) {
     $routeProvider
     .when('/', {
-        templateUrl: 'views/activities_list.html',
-        controller: 'ActivitiesCtrl'
+        templateUrl: 'views/activity-list.html',
+        controller: 'ActivityController'
     })
     .when('/tags', {
         templateUrl: 'views/tags_list.html',
@@ -137,7 +137,12 @@ function($routeProvider) {
     	templateUrl: 'views/douban-activity-list.html',
     	controller: 'DoubanActivitiesCtrl'
     		
-    });
+    })
+        .when('/activity',{
+            templateUrl:'views/activity-list.html',
+            controller:'ActivityController'
+        })
+    ;
 
 }]);
 

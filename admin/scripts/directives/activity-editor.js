@@ -3,7 +3,7 @@ angular.module('admin').directive('ngActivityForm', ['AdminService','TagService'
 	
 	return {
 		restrict : 'ACEM',
-		templateUrl : 'views/activity-form.html',
+		templateUrl : 'views/activity-form-old.html',
 		require : '^ngModel',
 		scope : {
 			ngModel : '=',

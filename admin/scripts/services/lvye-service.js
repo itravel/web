@@ -15,8 +15,16 @@ angular.module('admin').factory('LvyeService',function($q,LvyeActivityDao,Activi
         return transformed;
 	}
 	return {
-		transform:function(lvyeActivity){
-			return transform(lvyeActivity);
+		transform:function(lvyeActivity,activity){
+            activity.title = lvyeActivity.title;
+            activity.startTime = lvyeActivity.startTime;
+            activity.endTime = lvyeActivity.endTime;
+            activity.depart= lvyeActivity.fromAddress;
+            activity.destination = lvyeActivity.destinationAddress;
+            activity.scenerySpot = lvyeActivity.scenic.split(" ").join(",");
+            activity.web = lvyeActivity.url;
+            activity.content = lvyeActivity.content;
+			return activity;
 		},
 		getUneditData:function(start){
 			 var d = $q.defer();

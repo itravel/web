@@ -14,9 +14,12 @@
     <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="sb-admin-v2/css/sb-admin-2.css" rel="stylesheet">
     <link href="../bower_components/dropzone/downloads/css/dropzone.css" rel="stylesheet">
+    <link href="../bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet">
+    <link href="../bower_components/blueimp-file-upload/css/jquery.fileupload.css" rel="stylesheet">
 
 
     <link rel="stylesheet" href="datepicker/css/datepicker.css">
+
     <!-- <link href="sb-admin-v2/css/snap.css" rel="stylesheet"> -->
 
     <!-- -------------------------------------------------------------------------------------- -->
@@ -34,10 +37,27 @@
     <script src="sb-admin-v2/js/sb-admin-2.js"></script>
 
     <!-- 文件上传核心包 -->
+    <!--  <script src="../bower_components/dropzone/downloads/dropzone.js"></script>-->
 
-    <script src="../bower_components/dropzone/downloads/dropzone.js"></script>
+    <script src="../bower_components/blueimp-load-image/js/load-image.js"></script>
+    <script src="../bower_components/blueimp-load-image/js/load-image-meta.js"></script>
+    <script src="../bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload Angular JS module -->
+    <script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
 
-    <!-- dataTable -->
 
     <!-- angularjs ui -->
     <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
@@ -56,17 +76,20 @@
     <script src="scripts/services/lvye-service.js"></script>
     <script src="scripts/services/douban-service.js"></script>
     <script src="scripts/services/tag-service.js"></script>
+
     <script src="scripts/controllers/tag-controller.js"></script>
+    <script src="scripts/controllers/activities-controller-old.js"></script>
     <script src="scripts/controllers/activities-controller.js"></script>
     <script src="scripts/controllers/lvye-controller.js"></script>
     <script src="scripts/controllers/douban-controller.js"></script>
+    <script src="scripts/controllers/activity-edit-controller.js"></script>
 <!--    <script src="scripts/directives.js"></script>-->
     <script src="scripts/directives/activity-editor.js"></script>
 </head>
 
-<body>
+<body style="padding-top: 50px" >
 
-<nav class="navbar navbar-default navbar-static-top" role="navigation"
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top" role="navigation"
      style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -97,8 +120,8 @@
                 <li><a href="#"><i class="fa fa-dashboard fa-fw"></i>活动管理<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="#">线上活动</a></li>
-                        <li><a href="#lvye">绿野活动编辑</a></li>
-                        <li><a href="#douban">豆瓣活动编辑</a></li>
+                        <!--<li><a href="#lvye">绿野活动编辑</a></li>
+                        <li><a href="#douban">豆瓣活动编辑</a></li>-->
                     </ul>
                 </li>
                 <li><a href="#"><i class="fa fa-table fa-fw"></i> 目的地管理</a></li>

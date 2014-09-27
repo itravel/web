@@ -150,6 +150,16 @@ angular.module('admin')
                     	
                 }
             });
+        },
+        delete:function(id) {
+            return $http({
+                method: 'DELETE',
+                url: serviceUrl.activities + "/" + id,
+                headers: {
+                    'Content-Type': 'application/json'
+
+                }
+            });
         }
     };
 }]);

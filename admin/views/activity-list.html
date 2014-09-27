@@ -1,0 +1,145 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header ">
+            <span class="h1">活动编辑</span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <label>线上活动列表</label>
+            </div>
+            <div class="panel-body">
+                   <button class="btn btn-primary btn-sm" ng-click="addNewActivity()">添加新活动</button>
+            </div>
+                <table class="table table-condensed table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th><th>标题</th><th></th><th></th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="activity in activities">
+                        <td>{{activity.id}}</td>
+                        <td>{{activity.title}}</td>
+                        <td>
+
+                            <div class="btn-group">
+                                <label class="btn btn-danger btn-xs" ng-model="radioModel"  btn-radio="'Left'" ng-click="remove(activity)"><i class="fa fa-trash-o"></i>&nbsp;删除</label>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="btn-group">
+                                <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'Middle'"  ng-click="editeActivity(activity)"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</label>
+                            </div>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+
+                    </tfoot>
+                </table>
+                <pagination class="pull-right" total-items="totalItems" ng-model="currentPage" max-size="5" items-per-page = "5" ng-change="activityListPageChanged()"></pagination>
+            </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <label>待编辑绿野活动</label>
+            </div>
+            <div class="panel-body">
+            </div>
+            <table class="table table-condensed table-hover ">
+                <thead>
+                <tr>
+                    <th>#</th><th>title</th><th></th><th></th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr ng-repeat="lvyeActivity in lvyeActivities">
+                    <td>{{lvyeActivity.id}}</td>
+                    <td>{{lvyeActivity.title}}</td>
+                    <td>
+
+                        <div class="btn-group">
+                            <label class="btn btn-danger btn-xs" ng-model="radioModel"  btn-radio="'Left'" ng-click="removeLvye()"><i class="fa fa-trash-o"></i>&nbsp;删除</label>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="btn-group">
+                            <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'Middle'"  ng-click="createActivityByLvye(lvyeActivity)"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</label>
+                        </div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <pagination class="pull-right" total-items="lvyeTotalItems" ng-model="lvyeCurrentPage" max-size="5" items-per-page = "5" ng-change="lvyeListPageChanged()"></pagination>
+
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                待编辑豆瓣活动
+            </div>
+            <div class="panel-body">
+            </div>
+            <table class="table table-condensed table-hover">
+                <thead>
+                <tr>
+                    <th>#</th><th>title</th><th></th><th></th>
+                    <th></th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr ng-repeat="doubanActivity in doubanActivities">
+                    <td>{{doubanActivity.id}}</td>
+                    <td>{{doubanActivity.title}}</td>
+                    <td>
+
+                        <div class="btn-group">
+                            <label class="btn btn-danger btn-xs" ng-model="radioModel"  btn-radio="'Left'" ng-click="removeDouban(doubanActivity)"><i class="fa fa-trash-o"></i>&nbsp;删除</label>
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="btn-group">
+                            <label class="btn btn-primary btn-xs" ng-model="radioModel" btn-radio="'Middle'"  ng-click="createActivityByDouban(doubanActivity)"><i class="fa fa-pencil-square-o"></i>&nbsp;编辑</label>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <pagination class="pull-right" total-items="doubanTotalItems" ng-model="doubanCurrentPage" max-size="5" items-per-page = "5" ng-change="doubanListPageChanged()"></pagination>
+
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

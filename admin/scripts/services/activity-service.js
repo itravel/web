@@ -4,7 +4,7 @@ angular.module('admin').factory('ActivityService',function($q,ActivityDao,Activi
 	    getUneditData:function (current) {
 	        var d = $q.defer();
 	
-	        ActivityDao.getUnedit(current,1).success(function(data){
+	        ActivityDao.list(current,1).success(function(data){
 	            d.resolve(data);
 	        }).error(function(data){
 	            d.reject(data);
@@ -26,7 +26,7 @@ angular.module('admin').factory('ActivityService',function($q,ActivityDao,Activi
 	    getUneditDataPage: function(current,number){
 	    	var d = $q.defer();
 	    	
-	    	ActivityDao.getUnedit(current,number).success(function(data){
+	    	ActivityDao.list(current,number).success(function(data){
 	            d.resolve(data);
 	        }).error(function(data){
 	            d.reject(data);
@@ -82,6 +82,19 @@ angular.module('admin').factory('ActivityService',function($q,ActivityDao,Activi
             var d = $q.defer();
 
             ActivityDao.create({}).success(function(data){
+                d.resolve(data);
+            }).error(function(data){
+                d.reject(data);
+            });
+
+
+            return d.promise;
+        },
+
+        remove:function(activity){
+            var d = $q.defer();
+
+            ActivityDao.delete(activity.id).success(function(data){
                 d.resolve(data);
             }).error(function(data){
                 d.reject(data);

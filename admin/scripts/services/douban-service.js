@@ -1,6 +1,18 @@
 angular.module('admin').factory('DoubanService',function($q,DoubanActivityDao,ActivityDO){
 	 /*******************豆瓣数据服务*************************/
 	return {
+        transform:function(douban,activity){
+            activity.title = douban.title;
+            activity.startTime = douban.startTime;
+            activity.endTime = douban.endTime;
+            activity.depart= douban.depart;
+            activity.destination = douban.destination;
+            activity.scenerySpot = douban.scenerySpot;
+            activity.web = douban.url;
+            activity.fee = douban.fee;
+            activity.content = douban.content;
+            return activity;
+        },
 	    getUneditData:function (current) {
 	        var d = $q.defer();
 	
