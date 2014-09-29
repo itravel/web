@@ -15,4 +15,23 @@ angular.module("home").controller("HomeController",['$scope','ActivityService',f
         }
     }
 
+    $scope.myInterval = 5000;
+    var slides = $scope.slides = [
+        {
+            image:"images/location_img-33-3081082103-88.jpg",
+            text:"一段不平凡的旅程",
+            slogon:"Learn More"
+        },
+        {
+            image:"images/location_img-57-2457145156-88.jpg",
+            text:"一生只得回忆的故事",
+            slogon:"Be your want to be"
+        },
+        {
+            image:"images/location_img-59-3756038896-88.jpg",
+            text:"邂逅...",
+            slogon:"Sign up"
+        }
+    ];
+
 }])

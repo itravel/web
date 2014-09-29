@@ -22,8 +22,8 @@
 
 
 
-    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
+    <!--<div id="homeCarousel" class="carousel slide" data-ride="carousel">
+        &lt;!&ndash; Indicators &ndash;&gt;
         <ol class="carousel-indicators">
             <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#homeCarousel" data-slide-to="1"></li>
@@ -69,7 +69,18 @@
             <span class="glyphicon glyphicon-chevron-right"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div>-->
+
+    <carousel id="homeCarousel" class="carousel" interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;" />
+            <div class="carousel-caption">
+                <h1>{{slide.text}}</h1>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">{{slide.slogon}}</a></p>
+            </div>
+        </slide>
+    </carousel>
 
 
     <div class="container">
@@ -84,7 +95,7 @@
                 <div class="row">
                     <div class="col-lg-4" ng-repeat="activity in activities">
                         <div class="thumbnail" style="height:380px">
-                            <img class="img-rounded" src="activity.images[0]">
+                            <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}">
                             <div class="caption ">
                                 <h5 class="">{{activity.title}}</h5>
                                 <rating ng-model="rate" max="5" style="color:orange" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
