@@ -3574,7 +3574,7 @@
 		// Hidden header should have zero height, so remove padding and borders. Then
 		// set the width based on the real headers
 	
-		// Apply all styles in one pass
+		// Apply all css in one pass
 		_fnApplyToChildren( zeroOut, headerSrcEls );
 	
 		// Read all widths in next pass
