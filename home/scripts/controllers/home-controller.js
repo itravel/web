@@ -6,5 +6,13 @@ angular.module("home").controller("HomeController",['$scope','ActivityService',f
     ActivityService.getUneditDataPage(0,6).then(function(data){
         $scope.activities = data;
     })
+    $scope.getImageThumbnail = function(activity){
+        if(activity.images[0]){
+            return activity.images[0]
+        }
+        else {
+            return "images/1.png"
+        }
+    }
 
 }])
