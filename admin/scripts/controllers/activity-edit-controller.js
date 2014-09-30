@@ -3,6 +3,7 @@
  */
 angular.module("admin").controller("ActivityEditCtrl",['$scope','$modalInstance','activity','saveCallback','serviceUrl','ActivityService',function($scope, $modalInstance,activity,saveCallback,serviceUrl,ActivityService){
     $scope.activity = activity;
+
     $scope.alerts = [
     ];
 
@@ -56,7 +57,8 @@ angular.module("admin").controller("ActivityEditCtrl",['$scope','$modalInstance'
     };
 
     $scope.$on('fileuploaddone',function(e,data){
-        $scope.image = data.result.imageNames;
+        $scope.activity.image = data.result.imageNames;
+        console.log()
     });
     $scope.$on('fileuploadadd',function(file,xhr){
         $scope.queue.length = 0;
