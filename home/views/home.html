@@ -22,7 +22,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" ng-repeat="activity in activities">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" ng-repeat="activity in activities" >
+                        <a href="#/activity/{{activity.id}}">
                         <div class="thumbnail" style="height:380px">
                             <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}" style="height:200px">
                             <div class="caption ">
@@ -32,6 +33,7 @@
                                 <p style="color:silver">{{activity.title}}</p>
                             </div>
                         </div>
+                        </a>
                     </div>
                 </div>
 

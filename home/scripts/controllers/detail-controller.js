@@ -1,9 +1,9 @@
 /**
  * Created by william.wangwm on 2014/9/30.
  */
-angular.module("home").controller("DetailController",['$scope','ActivityService',function($scope,ActivityService){
-
-    ActivityService.get(130).then(function(data){
+angular.module("home").controller("DetailController",['$scope','$routeParams','ActivityService',function($scope,$routeParams,ActivityService){
+    console.log($routeParams)
+    ActivityService.get($routeParams.activityId).then(function(data){
         console.log(data)
         $scope.activity = data;
     });

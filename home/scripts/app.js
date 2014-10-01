@@ -22,7 +22,7 @@ homeModule.config(['$routeProvider',
                 templateUrl: 'views/home.html',
                 controller: 'HomeController'
             })
-            .when("/detail",{
+            .when("/activity/:activityId",{
                 templateUrl:"views/detail.html",
                 controller:'DetailController'
             })
