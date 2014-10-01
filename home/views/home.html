@@ -1,56 +1,5 @@
 
-
-
-
-    <!--<div id="homeCarousel" class="carousel slide" data-ride="carousel">
-        &lt;!&ndash; Indicators &ndash;&gt;
-        <ol class="carousel-indicators">
-            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#homeCarousel" data-slide-to="1"></li>
-            <li data-target="#homeCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="images/location_img-33-3081082103-88.jpg">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>一段不平凡的旅程.</h1>
-                        <p></p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="images/location_img-57-2457145156-88.jpg" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>一个一生只得回忆的故事.</h1>
-                        <p></p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Be your want to be</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="images/location_img-59-3756038896-88.jpg" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>邂逅...</h1>
-                        <p></p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>-->
-
+<div style=";min-width: 1024px">
     <carousel id="homeCarousel" class="carousel" interval="myInterval">
         <slide ng-repeat="slide in slides" active="slide.active">
             <img ng-src="{{slide.image}}" style="margin:auto;" />
@@ -63,19 +12,19 @@
     </carousel>
 
 
-    <div class="container">
+    <div class="container" >
 
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
                 <div class="row">
                     <div class="col-lg-12">
                         <h4>北京 - 当季热门活动</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4" ng-repeat="activity in activities">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" ng-repeat="activity in activities">
                         <div class="thumbnail" style="height:380px">
-                            <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}">
+                            <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}" style="height:200px">
                             <div class="caption ">
                                 <h5 class="">{{activity.title}}</h5>
                                 <rating ng-model="rate" max="5" style="color:orange" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
@@ -87,7 +36,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="row">
                     <div class="col-lg-12">
                         <h4>精彩瞬间</h4>
@@ -145,7 +94,4 @@
 
 
 </div>
-        <script type="text/javascript">
-
-            $("#homeCarousel").carousel();
-        </script>
+</div>

@@ -15,7 +15,7 @@ angular.module("home").controller("HomeController",['$scope','ActivityService',f
         }
     }
 
-    $scope.myInterval = 5000;
+    $scope.myInterval = 3000;
     var slides = $scope.slides = [
         {
             image:"images/location_img-33-3081082103-88.jpg",
@@ -24,7 +24,7 @@ angular.module("home").controller("HomeController",['$scope','ActivityService',f
         },
         {
             image:"images/location_img-57-2457145156-88.jpg",
-            text:"一生只得回忆的故事",
+            text:"一生值得回忆的故事",
             slogon:"Be your want to be"
         },
         {

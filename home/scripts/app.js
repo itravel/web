@@ -24,7 +24,7 @@ homeModule.config(['$routeProvider',
             })
             .when("/detail",{
                 templateUrl:"views/detail.html",
-                controller:'HomeController'
+                controller:'DetailController'
             })
 
         ;
