@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-7" style="color:#656d78">
            <p>
-            <i class="fa fa-quote-left ">&nbsp;&nbsp;</i>“草原天路”是中国北方地区十大最美丽的公路之一，号称中国的66号公路。“草原天路”（X001县道) 全长132.7公里，2011年底建成，位于河北省境内，是连接崇礼县塞外风景区和张北草原风情大区的一条重要通道。公路沿线蜿蜒曲折、河流山峦、沟壑纵深、草甸牛羊、景观奇峻，展现出一幅百里坝头风景画卷
+            <i class="fa fa-quote-left ">&nbsp;&nbsp;</i>{{activity.content}}
             </p>
            <!-- <p>
                 {{activity.content}}
@@ -33,11 +33,11 @@
 
         <div class="col-lg-3 text-center">
             <h4 style="color:coral;">
-                <i class="fa fa-tags"></i> 123.00 <small style="color:coral">元/人</small>
+                <i class="fa fa-tags"></i> {{activity.fee}} <small style="color:coral">元/人</small>
             </h4>
 
             <h5>
-                <i class="fa fa-phone"></i> 010-6363636
+                <i class="fa fa-phone"></i> {{activity.contact}}
             </h5>
         </div>
 
@@ -60,7 +60,7 @@
 
                             <div class="events-body">
                                 <h4 class="events-heading">{{journey.title}}</h4>
-                                <img class="events-object img-rounded" src="images/1.png" style="height:450px">
+                                <img class="events-object img-rounded" ng-src="{{journey.image}}" style="height:450px">
                                 <p>{{journey.content}}</p>
                             </div>
                         </div>
