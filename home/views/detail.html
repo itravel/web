@@ -5,9 +5,13 @@
     <div class="row"  >
         <div class="col-lg-12">
             <div class="background-image" style="background-image: url('{{activity.image}}')"></div>
-            <h3 class="" style="color:white;text-shadow:3px 0px rgba(1,1,1,0.4);padding:20px">{{activity.title}}
-                <p ><small><i class="fa fa-map-marker" style="color:orange">&nbsp;</i>{{activity.scenerySpot}}</small></p>
+            <h3 class="" style="color:white;text-shadow:3px 0px rgba(1,1,1,0.4);padding-left:20px">{{activity.title}}
+                <p><small><i class="fa fa-map-marker" style="color:#f5e79e">&nbsp;</i>{{activity.scenerySpot}}</small></p>
+                <p><small><rating ng-model="rate" max="5" style="color:orange" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+                    <span>(301)</span></small></p>
             </h3>
+
+
         </div>
     </div>
 
@@ -32,13 +36,12 @@
         </div>
 
         <div class="col-lg-3 text-center">
-            <h4 style="color:coral;">
-                <i class="fa fa-tags"></i> {{activity.fee}} <small style="color:coral">元/人</small>
-            </h4>
-
-            <h5>
-                <i class="fa fa-phone"></i> {{activity.contact}}
-            </h5>
+            <ul class="list-unstyled">
+                <li><i class="fa fa-phone">&nbsp;&nbsp;</i>121121122</li>
+                <li><i class="fa fa-qq">&nbsp;&nbsp;</i>121121122</li>
+                <li><i class="fa fa-wechat">&nbsp;&nbsp;</i>121121122</li>
+                <li><i class="fa fa-weibo">&nbsp;&nbsp;</i>121121122</li>
+            </ul>
         </div>
 
 
@@ -47,45 +50,70 @@
 <div class="detail-page container" style="background-color: #ffffff">
 
     <div class="row">
-        <div class="col-lg-12 detail" style="padding-left: 100px;padding-right: 100px">
+        <div class="col-lg-8 detail" >
             <div class="text-center">
                 <h3>行程安排</h3>
             </div>
-            <div class=" timeline">
+            <div class=" timeline" style="padding-left: 16px;">
                 <dl>
-                    <dt>{{activity.startTime}} 开始</dt>
+                   <!-- <dt>{{activity.startTime}} 开始</dt>-->
                     <dd class="{{getTimelinePosition($index)}}"  ng-repeat="journey in activity.journey">
                         <div class="circ"></div>
                         <div class="events">
 
                             <div class="events-body">
                                 <h4 class="events-heading">{{journey.title}}</h4>
-                                <img class="events-object img-rounded" ng-src="{{journey.image}}" style="height:450px">
+                                <img class="events-object img-rounded" ng-src="{{journey.image}}">
                                 <p>{{journey.content}}</p>
                             </div>
                         </div>
                     </dd>
-                    <dt>{{activit.endTime}} 结束</dt>
+                <!--    <dt>{{activity.endTime}} 结束</dt>-->
 
                 </dl>
             </div>
         </div>
+        <div class="col-lg-4 text-center" style="padding-top: 20px">
+            <div class="pricing" >
+                <ul >
+                    <li class="unit price-success active" style="max-width: 280px">
+                        <div class="price-title" >
+                            <h3><i class="fa fa-rmb">&nbsp;</i>299</h3>
+                            <p>每人</p>
+                        </div>
+                        <div class="price-body">
+
+                            <p><h4>费用包含</h4></p>
+                            <ul class="list-divider">
+                                <li>市区到酒店接送</li>
+                                <li>泸沽湖景点门票</li>
+                                <li>在祖母家晚餐费用</li>
+                            </ul>
+                        </div>
+                        <div class="price-foot">
+                            <button type="button" class="btn btn-success">马上预订</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-</div>
-
-<div class="detail-page container" style="margin-bottom: 30px;background-color: #ffffff">
-
     <div class="row">
         <div class="text-center">
             <h3>活动须知</h3>
         </div>
-        <div class="col-lg-12" style="padding-left: 100px;padding-right: 100px">
+        <div class="col-lg-12" >
 
-           <p>
-               {{activity.tips}}
-           </p>
+            <p>
+                {{activity.tips}}
+            </p>
         </div>
     </div>
 
 </div>
+
+<<!--div class="detail-page container" style="margin-bottom: 30px;background-color: #ffffff">
+
+
+
+</div>-->
