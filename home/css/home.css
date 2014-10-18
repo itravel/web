@@ -217,3 +217,46 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
         width: 84%;
     }
 }
+
+#hero {
+    width: 100%; height: 600px; position: absolute; left: 0; right: 0; top: 0;
+}
+
+#hero .slide {
+    position: absolute; width: 100%; height: 100%; z-index: -5;
+}
+
+#hero .slide.active {
+    z-index: 100;
+}
+
+#hero .slide.next {
+    z-index: 90;
+}
+
+#hero .slide img {
+    width: 100%;position: absolute;bottom: 0px;
+}
+
+#header {
+    position: absolute; top: 10px; z-index: 300; width: 100%; padding: 7px 20px;
+}
+
+#header .navbar-home {
+    border: none;
+}
+
+#header .navbar-home a {
+    color: white;
+}
+
+.home-activity:hover {
+}
+
+.home-activity .mask {
+    position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; background-color: black; opacity: 0.05;
+}
+
+.home-activity:hover .mask {
+    opacity: 0.15;
+}

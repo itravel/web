@@ -1,18 +1,148 @@
+<div style="min-width: 1024px;">
+    <div>
+        <header id="header" style="">
+            <nav class="navbar navbar-default navbar-home" role="navigation" style="background-color: transparent;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="javascript: void(0);" style="font-weight: bold;">Colorful World</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript: void(0);">注册</a></li>
+                        <li><a href="javascript: void(0);">登录</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
 
-<div style=";min-width: 1024px">
+
+    <div>
+        <div id="hero" image-slide style="">
+            <ul class="list-unstyled" style="margin: 0px; padding: 0px;">
+                <li ng-repeat="slide in slides" class="slide" ng-class="{'active': $first}" style="display: block;">
+                    <img ng-src="{{slide.image}}" style=""/>
+                </li>
+            </ul>
+        </div>
+        <div class="container" style="height: 600px;">
+
+        </div>
+    </div>
+
+    <div style="background-color: #fff;">
+        <div class="container">
+            <div id="weibo-section" class="text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="margin: 50px 0px 32px 0px; text-align: center;">
+                            <h2 class="strong" style="font-size: 32px;">
+                                微博上最热门的帖子
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 50px;">
+                    <div class="col-xs-3">
+                        <div class="media-photo media-round">
+                            <a href="/users/show/5518990" class="clickable-weibo-content"
+                               data-content-type="user-photo">
+                                <img alt="Original"
+                                     src="https://a0.muscache.com/ic/users/5518990/profile_pic/1403889062/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=68:*&amp;output-format=jpg&amp;output-quality=70"
+                                     class="img-circle" />
+                            </a>
+                        </div>
+                        <h4>
+                            卢卢和我们分享她住船屋的故事
+                        </h4>
+
+                        <p>"你永远也无法预计Airbnb会带给你什么，很多时候，它带给我的惊喜就好像魔幻世界所能做到的那样。"</p>
+
+                        <p><span class="weibo-logo"></span></p>
+
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="media-photo">
+                            <a href="/s/Sausalito--CA--United-States?keywords=houseboat" class="clickable-weibo-content"
+                               data-content-type="large-photo" target="_blank"><img
+                                    alt="Pixel-258c0301c93c84bbf77bcef5fccab62c"
+                                    data-original="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-large-224b7110ac40ad0c9c79a7d61fa9af14.jpg"
+                                    height="325"
+                                    src="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-large-224b7110ac40ad0c9c79a7d61fa9af14.jpg"
+                                    width="485" style="display: inline;"></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="media-photo" style="margin-bottom: 25px;">
+                            <a href="/s/Sausalito--CA--United-States?keywords=houseboat"
+                               class="clickable-weibo-content" data-content-type="small-photo" target="_blank"><img
+                                    alt="Pixel-258c0301c93c84bbf77bcef5fccab62c"
+                                    data-original="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-small1-6b8876d6e97adc8b6171297755be3555.jpg"
+                                    height="150"
+                                    src="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-small1-6b8876d6e97adc8b6171297755be3555.jpg"
+                                    width="230" style="display: inline;"></a>
+                        </div>
+                        <div class="media-photo">
+                            <a href="/s/Sausalito--CA--United-States?keywords=houseboat" class="clickable-weibo-content"
+                               data-content-type="small-photo" target="_blank"><img
+                                    alt="Pixel-258c0301c93c84bbf77bcef5fccab62c"
+                                    data-original="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-small2-6579e31a7e556366e3f9a31b62fabfb7.jpg"
+                                    height="150"
+                                    src="https://a1.muscache.com/airbnb/static/landing_pages/c1/weibo-small2-6579e31a7e556366e3f9a31b62fabfb7.jpg"
+                                    width="230" style="display: inline;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #edefed; margin-bottom: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div style="margin: 50px 0px 32px 0px; text-align: center;">
+                        <h2 class="strong" style="font-size: 32px;">
+                            探索世界
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4" ng-repeat="activity in activities" >
+                    <a href="#/activity/{{activity.id}}" class="home-activity">
+                        <div style="position: relative; width: 320px; display: inline-block;">
+                            <img ng-src="{{activity.images[0]}}" style="width: 320px; height: 340px;"/>
+                            <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: table; z-index: 10;">
+                                <div style="height: 340px; display: table-cell; vertical-align: middle;  text-align: center; color: white; font-size: 24px; width: 100%; padding: 0px 50px;">
+                                    <strong>{{activity.title}}</strong>
+                                </div>
+                            </div>
+                            <div class="mask" style="">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
     <carousel id="homeCarousel" class="carousel" interval="myInterval">
         <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}" style="margin:auto;" />
+            <img ng-src="{{slide.image}}" style="margin:auto;"/>
+
             <div class="carousel-caption">
                 <h1>{{slide.text}}</h1>
+
                 <p></p>
+
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">{{slide.slogon}}</a></p>
             </div>
         </slide>
     </carousel>
 
 
-    <div class="container" >
+    <div class="container">
 
         <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
@@ -22,17 +152,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" ng-repeat="activity in activities" >
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" ng-repeat="activity in activities">
                         <a href="#/activity/{{activity.id}}">
-                        <div class="thumbnail" style="height:380px">
-                            <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}" style="height:200px">
-                            <div class="caption ">
-                                <h5 class="">{{activity.title}}</h5>
-                                <rating ng-model="rate" max="5" style="color:orange" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
-                                <span>(301 reviews)</span>
-                                <p style="color:silver">{{activity.title}}</p>
+                            <div class="thumbnail" style="height:380px">
+                                <img class="img-rounded" ng-src="{{getImageThumbnail(activity)}}" style="height:200px">
+
+                                <div class="caption ">
+                                    <h5 class="">{{activity.title}}</h5>
+                                    <rating ng-model="rate" max="5" style="color:orange" readonly="isReadonly"
+                                            on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+                                    <span>(301 reviews)</span>
+
+                                    <p style="color:silver">{{activity.title}}</p>
+                                </div>
                             </div>
-                        </div>
                         </a>
                     </div>
                 </div>
@@ -47,8 +180,8 @@
                 </div>
                 <div class="row ">
                     <div class="col-lg-12">
-                            <div class="jumbotron">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+                        <div class="jumbotron">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                     <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
@@ -57,9 +190,11 @@
                                 <div class="carousel-inner">
                                     <div class="item next left">
                                         <img src="images/location_img-57-2457145156-88.jpg">
+
                                         <div class="media-list" style="background-color: #c0a16b">
                                             <div class="media">
                                                 <span class="pull-left">10月12</span>
+
                                                 <div class="media-body">
                                                     北京color run
                                                 </div>
@@ -68,10 +203,12 @@
                                     </div>
                                     <div class="item">
                                         <img src="images/location_img-57-2457145156-88.jpg">
+
                                         <div>dfdf</div>
                                     </div>
                                     <div class="item active left">
                                         <img src="images/location_img-57-2457145156-88.jpg">
+
                                         <div>dfdf</div>
                                     </div>
                                 </div>
@@ -82,7 +219,7 @@
                                     <span class="glyphicon glyphicon-chevron-right"></span>
                                 </a>
                             </div>
-                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -93,7 +230,5 @@
         </div>
 
 
-
-
-</div>
+    </div>-->
 </div>
