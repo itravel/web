@@ -13,6 +13,7 @@
                 </div>
             </nav>
         </header>
+
     </div>
 
 
@@ -23,9 +24,10 @@
                     <img ng-src="{{slide.image}}" style=""/>
                 </li>
             </ul>
+
         </div>
         <div class="container" style="height: 600px;">
-
+            
         </div>
     </div>
 
@@ -55,7 +57,7 @@
                             卢卢和我们分享她住船屋的故事
                         </h4>
 
-                        <p>"你永远也无法预计Airbnb会带给你什么，很多时候，它带给我的惊喜就好像魔幻世界所能做到的那样。"</p>
+                        <p>"你永远也无法预计ColorfulWorld会带给你什么，很多时候，它带给我的惊喜就好像魔幻世界所能做到的那样。"</p>
 
                         <p><span class="weibo-logo"></span></p>
 
@@ -107,21 +109,52 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-4" ng-repeat="activity in activities" >
-                    <a href="#/activity/{{activity.id}}" class="home-activity">
-                        <div style="position: relative; width: 320px; display: inline-block;">
-                            <img ng-src="{{activity.images[0]}}" style="width: 320px; height: 340px;"/>
-                            <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: table; z-index: 10;">
-                                <div style="height: 340px; display: table-cell; vertical-align: middle;  text-align: center; color: white; font-size: 24px; width: 100%; padding: 0px 50px;">
-                                    <strong>{{activity.title}}</strong>
+            <div class="row" style="margin-bottom: 25px">
+                <div class="col-xs-8" >
+                    <div class="panel">
+                        <a href="#" class="">
+                            <div style="background-image: url('images/bj1.png');">
+                                <div style="width:100%; top: 0px; left: 0px; bottom: 0px; right: 0px; display: table;">
+                                    <div style="height: 340px; display: table-cell; vertical-align: middle;  text-align: center; color: white; font-size: 24px; width: 100%; padding: 0px 50px;">
+                                        <h2><strong>北京</strong></h2>
+                                    </div>
+                                </div>
+                                <div class="mask" style="">
                                 </div>
                             </div>
-                            <div class="mask" style="">
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
+                <div class="col-xs-4" >
+                    <div class="panel">
+                        <a href="#" class="">
+                            <div style="width:100%;height:340px;display: table;background-image: url('images/sanlitun.png');">
+                                <div class="text-center" style="padding-top: 100px">
+                                    <img src="images/avatar2.jpg" class="img-circle avatar" >
+                                    <p ><h4 style="color:white">感受北京缠绵的夜色</h4></p>
+                                    <p style="color:white">北京</p>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-xs-4" ng-repeat="activity in activities" >
+                    <div class="panel">
+                        <a href="#" class="">
+                            <div style="width:100%;height:340px;display: table;background-image: url('{{activity.image}}');">
+                                <div class="text-center" style="padding-top: 100px;padding-left: 30px;padding-right: 30px">
+                                    <img src="images/avatar2.jpg" class="img-circle avatar" >
+                                    <p ><h4 style="color:white">{{activity.title}}</h4></p>
+                                    <p style="color:white">{{activity.scenerySpot}}</p>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
             </div>
         </div>
     </div>

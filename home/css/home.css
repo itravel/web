@@ -1,6 +1,8 @@
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 华文细黑, STHeiti, 微软雅黑, 'Microsoft YaHei', SimHei, sans-serif;
+}
 /* Carousel base class */
 #homeCarousel.carousel {
     height: 440px;
@@ -53,7 +55,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Micro
 }
 
 .avatar {
-    border: 4px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 50%;
     width: 64px;
     height:64px;
