@@ -1,10 +1,10 @@
 <div style="min-width: 1024px;">
     <div>
         <header id="header" style="">
-            <nav class="navbar navbar-default navbar-home" role="navigation" style="background-color: transparent;">
+            <nav class="navbar navbar-default navbar-home" role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="javascript: void(0);" style="font-weight: bold;">Colorful World</a>
+                        <a class="navbar-brand navbar-brand-home" href="javascript: void(0);">Colorful World</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="javascript: void(0);">注册</a></li>
@@ -13,21 +13,22 @@
                 </div>
             </nav>
         </header>
-
     </div>
 
-
     <div>
-        <div id="hero" image-slide style="">
-            <ul class="list-unstyled" style="margin: 0px; padding: 0px;">
+        <div image-slide id="hero">
+            <ul class="list-unstyled slides">
                 <li ng-repeat="slide in slides" class="slide" ng-class="{'active': $first}" style="display: block;">
                     <img ng-src="{{slide.image}}" style=""/>
                 </li>
             </ul>
-
         </div>
-        <div class="container" style="height: 600px;">
-
+        <div id="home-title" class="container">
+            <div style="margin: 200px auto;">
+                <h1 class="title">欢迎回家</h1>
+                <div class="subtitle">欢迎</div>
+                <a href="javascript: void(0);" class="btn btn-lg btn-default how-it-works">如何使用</a>
+            </div>
         </div>
     </div>
 

@@ -221,11 +221,23 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 #hero {
-    width: 100%; height: 600px; position: absolute; left: 0; right: 0; top: 0;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#hero .slides {
+    margin: 0px; padding: 0px;
 }
 
 #hero .slide {
-    position: absolute; width: 100%; height: 100%; z-index: -5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
 }
 
 #hero .slide.active {
@@ -237,28 +249,80 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 #hero .slide img {
-    width: 100%;position: absolute;bottom: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 
 #header {
-    position: absolute; top: 10px; z-index: 300; width: 100%; padding: 7px 20px;
+    position: absolute;
+    top: 10px;
+    z-index: 300;
+    width: 100%;
+    padding: 7px 20px;
 }
 
 #header .navbar-home {
     border: none;
+    background-color: transparent;
 }
 
 #header .navbar-home a {
     color: white;
 }
 
+#header .navbar-brand-home {
+    font-weight: bold;
+}
+
+.home-title {
+    height: 600px;
+    z-index: 300;
+    position: relative;
+}
+
 .home-activity:hover {
 }
 
 .home-activity .mask {
-    position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; background-color: black; opacity: 0.05;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background-color: black;
+    opacity: 0.05;
 }
 
 .home-activity:hover .mask {
     opacity: 0.15;
+}
+
+#home-title {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    height: 600px;
+    z-index: 300;
+}
+
+#home-title .title {
+    margin-top: 0px;
+    margin-bottom: 6.25px;
+    font-size: 60px;
+}
+
+#home-title .subtitle {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#home-title .how-it-works {
+    color: #fff;
+    border-radius: 1px;
+    border: none;
+    background: rgba(255,255,255,0.5);
+    font-weight: bold;
+    font-size: 16px;
 }
