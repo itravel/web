@@ -26,6 +26,10 @@ homeModule.config(['$routeProvider',
                 templateUrl:"views/detail.html",
                 controller:'DetailController'
             })
+            .when("/city/:cityName",{
+                templateUrl:"views/list.html",
+                controller:'ListController'
+            })
 
         ;
 
