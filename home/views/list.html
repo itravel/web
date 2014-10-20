@@ -14,8 +14,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2></h2>
+            <p> </p>
             <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
         </div>
         <div class="col-md-9">
@@ -29,7 +29,7 @@
                                 <div class="panel" >
 
                                     <div style="">
-                                        <div style="height:230px;background-image: url('images/1.png')"></div>
+                                        <div style="height:230px;background-image: url('{{activity.image}}')"></div>
                                     </div>
                                     <div class="panel-body">
                                         <div class="pull-right">
@@ -37,7 +37,7 @@
                                         </div>
                                         <div >
                                             <h4 style="margin-right:10px;white-space:nowrap;overflow: hidden;text-overflow: ellipsis">{{activity.title}}</h4>
-                                            <span><i class="fa fa-location-arrow"></i>{{activity.scenerySpot}}</span>
+                                            <span><i class="fa fa-location-arrow">&nbsp;</i>{{activity.destination.name}}</span>
                                         </div>
                                     </div>
                                 </div>
