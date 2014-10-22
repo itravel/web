@@ -3,8 +3,11 @@
  */
 angular.module("home").controller("ListController",['$scope','$routeParams','ActivityService',function($scope,$routeParams,ActivityService){
     $scope.activities = [];
-    ActivityService.getUneditDataPage(0,3).then(function(data){
+    ActivityService.getUneditDataPage(0,10).then(function(data){
         $scope.activities = data;
     })
-    console.log("------")
+    $scope.rate=3.5;
+    $scope.getActivityContent = function(value){
+        return value.substr(0,50)+"...";
+    }
 }])
