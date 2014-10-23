@@ -1,4 +1,4 @@
-<header id="header" style="background:url('images/header_list.jpg') center center no-repeat;height:445px">
+<header style="background:url('images/header_list.jpg') center center no-repeat;height:445px;">
     <nav class="navbar navbar-home" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -16,48 +16,16 @@
 
                 <div class="col-xs-3 col-xs-offset-1" style="border-right: 1px solid rgba(255,255,255,.2); "><h1 style="font-size: 78px;">丽江</h1></div>
                 <div class="col-xs-8" style="text-align: left;">
-                    <div class="subtitle" style="font: 18px 微软雅黑;color: rgba(255,255,255,.95);">丽江，雪山脚下的柔软时光</div>
-                    <div class="description" style="font:12px/1.5 tahoma,arial,宋体,sans-serif;color: rgba(255,255,255,.65)">丽江就是那样一个地方，虽然人人都说烂掉了没意思，但你没事还是会拿出来咀嚼挂念，想再回去的地方。<br/>
-                        丽江就是丽江，近或远，都只是多数人心里的一个梦。美好或绝望。</div>
+                    <!--<div class="subtitle" style="color: rgba(255,255,255,.95);">丽江，雪山脚下的柔软时光</div>-->
+                    <h4 style="color: rgba(255,255,255,.95);">丽江，雪山脚下的柔软时光</h4>
+                    <!--<div class="description" style="font:12px/1.5 tahoma,arial,宋体,sans-serif;color: rgba(255,255,255,.65)">丽江就是那样一个地方，虽然人人都说烂掉了没意思，但你没事还是会拿出来咀嚼挂念，想再回去的地方。<br/>
+                        丽江就是丽江，近或远，都只是多数人心里的一个梦。美好或绝望。</div>-->
+                    <p style="font:12px tahoma,arial,宋体,sans-serif;color: rgba(255,255,255,.65)">丽江就是那样一个地方，虽然人人都说烂掉了没意思，但你没事还是会拿出来咀嚼挂念，想再回去的地方。<br/>
+                        丽江就是丽江，近或远，都只是多数人心里的一个梦。美好或绝望。</p>
                 </div>
         </div>
     </div>
 </header>
-
-
-<!-- <header id="header" style="">
-        <nav class="navbar navbar-default navbar-home" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand navbar-brand-home" href="javascript: void(0);">麦子旅行</a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="javascript: void(0);">注册</a></li>
-                    <li><a href="javascript: void(0);">登录</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="jumbotron">fdfdfd</div>
-    </header>-->
-
-    <!--<div>
-        <div class="list-image" style=" height: 460px; position: absolute; top: 0px; left: 0px; right: 0px;">
-            <img ng-src="images/header_list.jpg"  style="width: 100%;"/>
-        </div>
-        <div id="home-title" class="container" style="height: 460px;">
-            <div style="margin: 150px auto; width: 980px;">
-                <div class="row">
-                    <div class="col-xs-3 col-xs-offset-1" style="border-right: 1px solid rgba(255,255,255,.2); "><h1 style="font-size: 78px;">丽江</h1></div>
-                    <div class="col-xs-8" style="text-align: left;">
-                        <div class="subtitle" style="font-size: 18px; color: rgba(255,255,255,.95);">丽江，雪山脚下的柔软时光</div>
-                        <div class="description" style="font-size: 12px; color: rgba(255,255,255,.65)">丽江就是那样一个地方，虽然人人都说烂掉了没意思，但你没事还是会拿出来咀嚼挂念，想再回去的地方。<br/>
-                            丽江就是丽江，近或远，都只是多数人心里的一个梦。美好或绝望。</div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>-->
 
 
 
@@ -65,8 +33,11 @@
     <div class="row">
         <div class="col-md-9">
             <div class="row">
+
                 <div class="col-md-4 col-sm-6 col-xs-6"  ng-repeat="activity in activities" >
-                    <div class="thumbnail" style="min-height: 350px">
+                    <a href="#/activity/{{activity.id}}" >
+                    <div class="thumbnail" style="min-height: 350px;padding: 0px !important;">
+
                         <img class="img-responsive" src="{{activity.image}}">
                         <div class="caption" >
                             <div class="media">
@@ -79,38 +50,47 @@
                                     <rating ng-model="rate" max="5" readonly="isReadonly" style="color:orangered" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>(401 review)
                                 </div>
                             </div>
-                            <p>{{getActivityContent(activity.content)}}</p>
+                            <p style="color:#82888a">{{getActivityContent(activity.content)}}</p>
 
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
 
         </div>
 
         <div class="col-md-3">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">众筹</h3>
+                    <h3 class="panel-title">机票预订</h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    无最新内容
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">酒店预订</h3>
+                </div>
+                <div class="panel-body">
+                    无最新内容
+                </div>
+            </div>
+            <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">达人秀</h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    无最新内容
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">动态</h3>
                 </div>
                 <div class="panel-body">
-                    Panel content
+                    无最新内容
                 </div>
             </div>
         </div>
