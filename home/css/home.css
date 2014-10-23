@@ -255,11 +255,6 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 #header {
-    position: absolute;
-    top: 10px;
-    z-index: 300;
-    width: 100%;
-    padding: 7px 20px;
 }
 
 #header .navbar-home {
@@ -313,6 +308,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 #home-title .subtitle {
+
     margin-bottom: 25px;
     font-size: 18px;
     font-weight: bold;
