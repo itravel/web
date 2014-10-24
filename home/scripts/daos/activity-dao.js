@@ -12,6 +12,13 @@ angular.module('home')
                     url: serviceUrl.activities
                 });
             },
+            list_by_city:function(cityName){
+                return $http({
+                    method: 'GET',
+                    params:{'city':cityName},
+                    url: serviceUrl.activities
+                });
+            },
             get: function (id) {
                 return $http({
                     method: 'GET',

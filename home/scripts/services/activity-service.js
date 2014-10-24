@@ -1,17 +1,30 @@
-angular.module('home').factory('ActivityService',function($q,ActivityDao){
+angular.module('home').factory('ActivityService',function($q,ActivityDao,AreaDao){
 	 /*******************线上活动服务*************************/
 	return {
 	    getUneditData:function (current) {
 	        var d = $q.defer();
-	
+
 	        ActivityDao.list(current,1).success(function(data){
 	            d.resolve(data);
 	        }).error(function(data){
 	            d.reject(data);
 	        });
-	
+
 	        return d.promise;
 	    },
+        getByCity:function(cityName){
+            var d = $q.defer();
+
+
+            ActivityDao.list_by_city(cityName).success(function(data){
+//                console.log(ss);
+                d.resolve(data);
+            }).error(function(data){
+                d.reject(data);
+            });
+
+            return d.promise;
+        },
 	    get:function(id){
 	    	var d = $q.defer();
 	    	

@@ -3,7 +3,7 @@
  */
 var homeModule = angular.module('home', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.carousel'])
 homeModule.constant('serviceUrl', {
-    activities: "/services/activities/",
+    activities: "/services/activities",
     activityImages: "/services/images/activities",
     tag: "/services/tags",
     category: "/services/tags/categories",
@@ -11,7 +11,8 @@ homeModule.constant('serviceUrl', {
     lvyeUnedit: "/services/lvye_activity/unedit",
     lvyeLock: "/services/lvye_activity/lock",
     douban: "/services/douban",
-    doubanUnedit: "/services/douban/unedit"
+    doubanUnedit: "/services/douban/unedit",
+    cities:"/services/cities"
 
 
 });
