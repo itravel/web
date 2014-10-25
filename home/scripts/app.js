@@ -40,6 +40,10 @@
                         templateUrl: 'views/list.html',
                         controller: 'ListController'
                     })
+                    .when('/activity/:activityId/edit',{
+                        templateUrl:'views/edit.html',
+                        controller:'EditController'
+                    })
                 ;
             }]);
 })();
