@@ -1,42 +1,40 @@
 <!DOCTYPE html>
-<html ng-app="home">
-<head lang="en">
+<html lang="zh-cmn-Hans">
+<head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>麦子旅行</title>
     <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- bootflat 组件css-->
     <link href="../bower_components/Bootflat/bootflat/css/bootflat.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
-
-    <!-- jquery 核心包 -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <!-- bootstrap 核心包-->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- angularjs 核心包  -->
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <!-- angular ui 核心包-->
-    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <!-- bootflat 核心包-->
-    <script src="../bower_components/Bootflat/bootflat/js/icheck.min.js"></script>
-    <script src="../bower_components/Bootflat/bootflat/js/jquery.fs.selecter.min.js"></script>
-    <script src="../bower_components/Bootflat/bootflat/js/jquery.fs.stepper.min.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script src="scripts/directives/image-slide-directive.js"></script>
-    <script src="scripts/controllers/home-controller.js"></script>
-    <script src="scripts/controllers/detail-controller.js"></script>
-    <script src="scripts/controllers/list-controller.js"></script>
-    <script src="scripts/daos/base.js"></script>
-    <script src="scripts/daos/activity-dao.js"></script>
-    <script src="scripts/daos/area-dao.js"></script>
-    <script src="scripts/services/activity-service.js"></script>
-    <script src="scripts/services/area-service.js"></script>
-
-
 </head>
-<body style="background-color: rgb(241, 242, 246);">
+<body ng-app="maizi" style="background-color: rgb(241, 242, 246);">
 <ng-view></ng-view>
+
+<!-- jquery 核心包 -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- bootstrap 核心包-->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<!-- angularjs 核心包  -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<!-- angular ui 核心包-->
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- bootflat 核心包-->
+<script src="../bower_components/Bootflat/bootflat/js/icheck.min.js"></script>
+<script src="../bower_components/Bootflat/bootflat/js/jquery.fs.selecter.min.js"></script>
+<script src="../bower_components/Bootflat/bootflat/js/jquery.fs.stepper.min.js"></script>
+
+<script src="scripts/app.js"></script>
+<script src="scripts/directives/image-slide-directive.js"></script>
+<script src="scripts/controllers/home-controller.js"></script>
+<script src="scripts/controllers/detail-controller.js"></script>
+<script src="scripts/controllers/list-controller.js"></script>
+<script src="scripts/daos/base.js"></script>
+<script src="scripts/daos/activity-dao.js"></script>
+<script src="scripts/daos/area-dao.js"></script>
+<script src="scripts/services/activity-service.js"></script>
+<script src="scripts/services/area-service.js"></script>
 </body>
 </html>
