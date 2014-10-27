@@ -44,6 +44,17 @@
                         templateUrl:'views/edit.html',
                         controller:'EditController'
                     })
+                    .when('/activity/:activityId/order',{
+                        templateUrl:'views/order.html',
+                        controller:'OrderController'
+                    })
                 ;
+            }]);
+
+    angular
+        .module('maizi')
+        .run(['$rootScope',
+            function ($rootScope) {
+                $rootScope.basePath = '/home/#/';
             }]);
 })();

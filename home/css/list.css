@@ -1,0 +1,54 @@
+.list {
+
+}
+
+.list main {
+    height: 450px;
+}
+
+.list main .container {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 300;
+    padding-top: 150px;
+}
+
+.list .area-wrapper {
+    border-right: 1px solid rgba(255, 255, 255, .2);
+}
+
+.list .area-name {
+    font-size: 78px;
+}
+
+.list .area-comments {
+    color: rgba(255, 255, 255, .95);
+}
+
+.list .area-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, .65);
+}
+
+.list .activity {
+    border: 2px transparent solid;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 250px;
+}
+
+.list .activity:hover {
+    border-color: #DDD;
+}
+
+.list .activity .image-wrapper {
+    display: block;
+    width: 227px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.list .activity .image-wrapper:hover img {
+    transform: scale(1.04, 1.04);
+}

@@ -1,100 +1,91 @@
-<header style="background:url('images/header_list.jpg') center center no-repeat;height:445px;">
-    <nav class="navbar navbar-home" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand navbar-brand-home" href="javascript: void(0);">麦子旅行</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="javascript: void(0);">注册</a></li>
-                <li><a href="javascript: void(0);">登录</a></li>
-            </ul>
-        </div>
-    </nav>
+<link href="css/nav-transparent.css" rel="stylesheet">
 
-    <div class="container" id="home-title">
-        <div class="row text-center" style="padding-top: 80px">
-
-                <div class="col-xs-3 col-xs-offset-1" style="border-right: 1px solid rgba(255,255,255,.2); "><h1 style="font-size: 78px;">{{area.name}}</h1></div>
-                <div class="col-xs-8" style="text-align: left;">
-                    <h4 style="color: rgba(255,255,255,.95);">{{area.comments}}</h4>
-                    <p style="font:12px tahoma,arial,宋体,sans-serif;color: rgba(255,255,255,.65)">{{area.description}}</p>
+<div class="list">
+    <main style="background:url('images/header_list.jpg') center center no-repeat;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-xs-3 col-xs-offset-1 area-wrapper">
+                    <h1 class="area-name">{{area.name}}</h1>
                 </div>
+                <div class="col-xs-8" style="text-align: left;">
+                    <h4 class="area-comments">{{area.comments}}</h4>
+
+                    <p class="area-description">{{area.description}}</p>
+                </div>
+            </div>
         </div>
-    </div>
-</header>
+    </main>
 
-
-
-<div class="container" style="padding-top: 64px">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="row">
-
-                <div class="col-md-4 col-sm-6 col-xs-6"  ng-repeat="activity in activities" >
-                    <a href="#/activity/{{activity.id}}" >
-                    <div class="thumbnail" style="min-height: 350px;padding: 0px !important;">
-
-                        <img class="img-responsive" src="{{activity.image}}">
-                        <div class="caption" >
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img src="images/avatar2.jpg" style="width:48px;height:48px" class="img-circle" />
-                                    <span class="badge badge-primary">自由职业</span>
+    <div class="container" style="padding-top: 64px">
+        <div class="row">
+            <div class="col-xs-9">
+                <div class="row">
+                    <div class="col-xs-4" ng-repeat="activity in activities">
+                            <div class="thumbnail activity" style="350px; padding: 0px !important;">
+                                <a class="image-wrapper" ng-href="#/activity/{{activity.id}}">
+                                    <img class="img-responsive" ng-src="{{activity.image}}" style="height: 140px;"/>
                                 </a>
-                                <div class="media-body">
-                                    <h1 class="media-heading">{{activity.title}}</h1>
-                                    <rating ng-model="rate" max="5" readonly="isReadonly" style="color:orangered" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>(401 review)
+
+                                <div class="caption">
+                                    <div class="media" style="margin: 0px;">
+                                        <a class="pull-left" href="javascript: void(0);">
+                                            <img src="images/avatar2.jpg" style="width:48px;height:48px"
+                                                 class="img-circle"/>
+                                            <span class="badge badge-primary">自由职业</span>
+                                        </a>
+
+                                        <a ng-href="#/activity/{{activity.id}}">
+                                            <div class="media-body">
+                                                <h1 class="media-heading">{{activity.title | slice : 0 : 16}}</h1>
+                                                <rating ng-model="rate" max="5" readonly="isReadonly"
+                                                        style="color:orangered" on-hover="hoveringOver(value)"
+                                                        on-leave="overStar = null"></rating>
+                                                (401)
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!--<p style="color:#82888a">{{getActivityContent(activity.content)}}</p>-->
                                 </div>
                             </div>
-                            <p style="color:#82888a">{{getActivityContent(activity.content)}}</p>
-
-                        </div>
                     </div>
-                    </a>
                 </div>
             </div>
 
+            <div class="col-xs-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">机票预订</h3>
+                    </div>
+                    <div class="panel-body">
+                        无最新内容
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">酒店预订</h3>
+                    </div>
+                    <div class="panel-body">
+                        无最新内容
+                    </div>
+                </div>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">达人秀</h3>
+                    </div>
+                    <div class="panel-body">
+                        无最新内容
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">动态</h3>
+                    </div>
+                    <div class="panel-body">
+                        无最新内容
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">机票预订</h3>
-                </div>
-                <div class="panel-body">
-                    无最新内容
-                </div>
-            </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">酒店预订</h3>
-                </div>
-                <div class="panel-body">
-                    无最新内容
-                </div>
-            </div>
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">达人秀</h3>
-                </div>
-                <div class="panel-body">
-                    无最新内容
-                </div>
-            </div>
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">动态</h3>
-                </div>
-                <div class="panel-body">
-                    无最新内容
-                </div>
-            </div>
-        </div>
     </div>
-
-    <hr>
-
-    <footer>
-        <p>© Company 2014</p>
-    </footer>
 </div>

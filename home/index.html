@@ -7,10 +7,18 @@
     <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- bootflat 组件css-->
     <link href="../bower_components/Bootflat/bootflat/css/bootflat.css" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
+    <link href="css/list.css" rel="stylesheet">
+    <link href="css/detail.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
 </head>
 <body ng-app="maizi" style="background-color: rgb(241, 242, 246);">
+<header ng-include="'views/elements/nav.html'"></header>
 <ng-view></ng-view>
+<footer ng-include="'views/elements/footer.html'"></footer>
 
 <!-- jquery 核心包 -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -37,5 +45,6 @@
 <script src="scripts/daos/area-dao.js"></script>
 <script src="scripts/services/activity-service.js"></script>
 <script src="scripts/services/area-service.js"></script>
+<script src="scripts/filters/slice-filter.js"></script>
 </body>
 </html>

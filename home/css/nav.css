@@ -1,0 +1,25 @@
+#navbar {
+    position: absolute;
+    z-index: 300;
+    width: 100%;
+    padding: 7px 20px;
+    margin: 0px;
+    border-radius: 0px;
+    min-width: 1045px;
+}
+
+#navbar .navbar-brand {
+    font-weight: bold;
+}
+
+#navbar .navbar-header {
+    float: left;
+}
+
+#navbar .navbar-right {
+    float: right;
+}
+
+#navbar .navbar-right li {
+    float: left;
+}

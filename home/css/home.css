@@ -1,47 +1,9 @@
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 华文细黑, STHeiti, 微软雅黑, 'Microsoft YaHei', SimHei, sans-serif;
-}
-/* Carousel base class */
-#homeCarousel.carousel {
-    height: 440px;
-    margin-bottom: 60px;
-}
-/* Since positioning the image, we need to help out the caption */
-#homeCarousel .carousel-caption {
-    z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-#homeCarousel.carousel .item {
-    height: 440px;
-    background-color: #777;
-}
-#homeCarousel .carousel-inner > .item > img {
-    top: 0;
-    left: 0;
-    min-width: 100%;
-}
-
 .ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.background-image {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    display: block;
-    filter: blur(5px);
-        -webkit-filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
-    height: 300px;
-}
+
 .content {
     position: fixed;
     left: 0;
@@ -238,6 +200,7 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     z-index: -5;
+    min-width: 1045px;
 }
 
 #hero .slide.active {
@@ -332,101 +295,3 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 {
 }
 
 
-/*** activity detail ***/
-.activity-detail {
-
-}
-
-.activity-detail .activity-title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 25px;
-    margin-bottom: 10px;
-    color: #454545;
-}
-
-.activity-detail .activity-images {
-    position: relative;
-    height: 480px;
-    margin-bottom: 30px;
-}
-
-.activity-detail .activity-images .image {
-    width: 720px;
-    height: 480px;
-}
-
-.activity-detail .card {
-    margin-left: 0px;
-    padding: 20px;
-    width: 680px;
-    background-color: #FFF;
-    margin-bottom: 20px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-box-shadow: 0 0 3px #CCC;
-    -moz-box-shadow: 0 0 3px #CCC;
-    box-shadow: 0 0 3px #CCC;
-}
-
-.activity-detail .card .card-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #454545;
-    margin: 0 0 20px;
-}
-
-.activity-detail .card .card-content pre {
-    font-size: 14px;
-    color: #333;
-    padding: 0px 0px 10px 0px;
-    font-family: '宋体';
-    line-height: 24px;
-    border: none;
-    background: none;
-}
-
-.activity-detail .card-sm {
-    margin-left: 0px;
-    padding: 20px;
-    background-color: #FFF;
-    margin-bottom: 20px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-box-shadow: 0 0 3px #CCC;
-    -moz-box-shadow: 0 0 3px #CCC;
-    box-shadow: 0 0 3px #CCC;
-    padding: 0px;
-}
-
-.activity-detail .card-sm .price {
-    text-align: center;
-    color: #0196da;
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 0px;
-}
-
-.activity-detail .card-sm .refund {
-    font-size: 14px;
-    line-height: 1em;
-    color: #a5a5a5;
-    text-align: center;
-}
-
-.activity-detail .route {
-    font-size: 14px;
-    font-family: '宋体';
-    color: #000;
-}
-
-.activity-detail .card-sm form .form-group {
-    margin-bottom: 10px;
-}
-
-.activity-detail .card-sm form .form-group .control-label{
-    font-size: 16px;
-    font-weight: normal;
-}

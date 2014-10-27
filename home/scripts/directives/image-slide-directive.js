@@ -12,7 +12,7 @@
                 var index = 1;
 
                 function slide() {
-                    console.log(index);
+                    //console.log(index);
                     var lis = element.find('li');
                     var liCount = lis.length;
 
@@ -27,19 +27,19 @@
                             }, 1000, function () {
 
                                 lastImage.removeClass('active');
-                                console.log(lastImage.css('z-index'));
+                                //console.log(lastImage.css('z-index'));
                                 lastImage.css('opacity', 1);
 
                                 image.removeClass('next');
                                 image.addClass('active');
-                                console.log(lastImage.css('z-index'));
+                                //console.log(lastImage.css('z-index'));
 
                             });
                         })(lastImage, image);
 
                         lastIndex = ++lastIndex % liCount;
                         index = ++index % liCount;
-                        console.log('index:', lastIndex, index)
+                        //console.log('index:', lastIndex, index)
                     }
                     setTimeout(slide, 5000);
                 }

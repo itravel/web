@@ -1,0 +1,29 @@
+#footer {
+    background: #666;
+    padding: 70px 0 0;
+    min-height: 240px;
+}
+
+#footer .footer-items {
+    width: 720px;
+    margin: 0px auto;
+}
+
+#footer .footer-item {
+    float: left;
+    width: 120px;
+    padding: 0px;
+}
+
+#footer .footer-item a {
+    display: block;
+    padding-top: 40px;
+    color: #b5b5b5;
+    transition: color .3s ease-in-out;
+    text-align: center;
+}
+
+#footer .footer-copyright {
+    margin: 10px 0 0 0;
+    text-align: center;
+}

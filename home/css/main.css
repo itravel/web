@@ -1,0 +1,12 @@
+body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, pre {
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', STHeiti, 微软雅黑, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimHei, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 1045px !important;
+}
