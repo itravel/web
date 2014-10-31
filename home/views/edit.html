@@ -1,5 +1,6 @@
 <link href="css/nav-background.css" rel="stylesheet">
 
+<!--
 <div class="container" style="">
     <div class="row">
         <div class="col-md-3">
@@ -56,7 +57,7 @@
                 <label class="col-md-3 control-label">费用包含</label>
                 <div class="col-md-9">
 
-                    <textarea class="form-control" ng-model="activity.feeInclude"></textarea>
+                    <textarea class="form-control" ng-model="activity.feeInclude" rows="6" maxlength="250"></textarea>
                 </div>
             </div>
 
@@ -97,3 +98,136 @@
         </div>
     </div>
 </div>
+-->
+
+<div class="activity-detail container-fluid" style="min-height: 100%">
+    <div class="row">
+        <div class="col-sm-3">
+
+            <ul class="nav nav-sidebar">
+                <li>
+                    <h4>基础信息</h4>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="javascript:void(0);" ng-click="show(0)">标题</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(1)">描述</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(2)">亮点</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(3)">图片</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav nav-sidebar">
+                <li>
+                    <h4>详细信息</h4>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="javascript:void(0);" ng-click="show(4)">接待人数</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(5)">接待时间</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(6)">费用</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(7)">行程安排</a>
+                        </li>
+                        <li><a href="javascript:void(0);" ng-click="show(8)">温馨提示</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-xs-12" style="padding: 20px">
+                    <form class="form-horizontal">
+                        <div class="form-group" ng-show="currentTab === 0">
+                            <label for="title" class="col-xs-3 control-label">标题</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" id="title" placeholder="标题">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 1">
+                            <label for="abstract" class="col-xs-3 control-label">活动摘要</label>
+                            <div class="col-xs-9">
+                                <textarea rows="6" maxlength="250" class="form-control" id="abstract" placeholder="活动摘要"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 2">
+                            <label for="highlight" class="col-xs-3 control-label">活动亮点</label>
+                            <div class="col-xs-9">
+                                <textarea rows="6" maxlength="250" class="form-control" id="highlight" placeholder="活动亮点"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 3">
+                            <strong>图片</strong>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 4">
+                            <label for="number-of-people" class="col-xs-3 control-label">接待人数</label>
+                            <div class="col-xs-9">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="number-of-people" placeholder="接待人数" min="1">
+                                    <div class="input-group-addon">人</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 5">
+                            <label for="start-date" class="col-xs-3 control-label">接待起始日期</label>
+                            <div class="col-xs-9">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="start-date" placeholder="接待起始日期">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i>
+                                            </button>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 5">
+                            <label for="duration" class="col-xs-3 control-label">接待天数</label>
+                            <div class="col-xs-9">
+                                <input type="number" class="form-control" id="duration" placeholder="接待天数" min="1">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 6">
+                            <label for="cost" class="col-xs-3 control-label">费用</label>
+                            <div class="col-xs-9">
+                                <div class="input-group">
+                                    <div class="input-group-addon">￥</div>
+                                    <input type="number" class="form-control" id="cost" placeholder="费用" min="0.01" step="0.01">
+                                    <div class="input-group-addon">每人</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 6">
+                            <label for="cost-includes" class="col-xs-3 control-label">费用包含</label>
+                            <div class="col-xs-9">
+                                <textarea rows="6" class="form-control" id="cost-includes" placeholder="费用包含"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 6">
+                            <label for="cost-excludes" class="col-xs-3 control-label">费用不含</label>
+                            <div class="col-xs-9">
+                                <textarea rows="6" class="form-control" id="cost-excludes" placeholder="费用不含"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 7">
+                            <strong>行程安排</strong>
+                        </div>
+                        <div class="form-group" ng-show="currentTab === 8">
+                            <label for="advice" class="col-xs-3 control-label">温馨提示</label>
+                            <div class="col-xs-9">
+                                <textarea rows="6" maxlength="250" class="form-control" id="advice" placeholder="温馨提示"></textarea>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-3">{{show}}</div>
+        </div>
+    </div></div>

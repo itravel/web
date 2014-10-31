@@ -15,7 +15,15 @@
         ActivityService.get($routeParams.activityId).then(function (data) {
 
             $scope.activity = data;
+
         });
 
+        $scope.show = function(i) {
+            $scope.currentTab = i;
+        };
+
+        $scope.save = function(activity){
+            ActivityService.save(activity);
+        }
     }
 })();
