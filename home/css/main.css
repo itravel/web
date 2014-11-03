@@ -1,5 +1,5 @@
 body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, pre {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', STHeiti, 微软雅黑, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimHei, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 微软雅黑, 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 }
 
 html, body {
@@ -9,4 +9,12 @@ html, body {
 
 .container {
     width: 1045px !important;
+}
+
+.narbar {
+
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    background-color: #fff;
 }

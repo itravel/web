@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('maizi', ['ngRoute', 'ui.bootstrap', 'ui.bootstrap.carousel']);
+        .module('maizi', ['ngRoute', 'ui.bootstrap', 'datetimepicker']);
 
     angular
         .module('maizi')
