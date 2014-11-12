@@ -19,6 +19,7 @@
 </head>
 <body ng-app="maizi" style="background-color: rgb(241, 242, 246);">
 <header ng-include="'views/elements/nav.html'"></header>
+
 <ng-view></ng-view>
 <footer ng-include="'views/elements/footer.html'"></footer>
 
@@ -34,6 +35,31 @@
 <script src="../bower_components/moment/min/moment-with-locales.js"></script>
 <!-- angular ui 核心包-->
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<!-- file upload 图片控件 -->
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="../bower_components/blueimp-load-image/js/load-image.all.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="../bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+<script src="../bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script> <!-- 上传控件依赖的jquery ui -->
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+<!-- The File Upload video preview plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+<!-- The File Upload Angular JS module -->
+<script src="../bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+
 <!-- bootflat 核心包-->
 <script src="../bower_components/Bootflat/bootflat/js/icheck.min.js"></script>
 <script src="../bower_components/Bootflat/bootflat/js/jquery.fs.selecter.min.js"></script>
@@ -44,8 +70,12 @@
 
 <script src="scripts/directives/datetimepicker.js"></script>
 
+
+
+
 <script src="scripts/app.js"></script>
 <script src="scripts/directives/image-slide-directive.js"></script>
+<script src="scripts/directives/image-upload.js"></script>
 <script src="scripts/controllers/home-controller.js"></script>
 <script src="scripts/controllers/detail-controller.js"></script>
 <script src="scripts/controllers/list-controller.js"></script>
@@ -56,5 +86,6 @@
 <script src="scripts/services/activity-service.js"></script>
 <script src="scripts/services/area-service.js"></script>
 <script src="scripts/filters/slice-filter.js"></script>
+
 </body>
 </html>

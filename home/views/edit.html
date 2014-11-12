@@ -1,106 +1,124 @@
 <link href="css/nav-background.css" rel="stylesheet">
 
-<!--
-<div class="container" style="">
+
+<div class="activity-detail container-fluid">
+
+
     <div class="row">
-        <div class="col-md-3">
-
+        <div class="col-sm-4">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">标题</a></li>
+                <li><a href="#">描述</a></li>
+                <li><a href="#">亮点</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">接待人数</a></li>
+                <li><a href="#">接待时间</a></li>
+                <li><a href="#">费用</a></li>
+                <li><a href="#">费用包含</a></li>
+                <li><a href="#">费用不含</a></li>
+                <li><a href="#">行程安排</a></li>
+                <li><a href="#">温馨提示</a></li>
+            </ul>
         </div>
-        <div class="col-md-6">
-            <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="col-md-3 control-label">标题</label>
-                <div class="col-md-9">
-                    <input class="form-control" type="text" ng-model="activity.title"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">活动摘要</label>
-                <div class="col-md-9">
-                    <textarea class="form-control" ng-model="activity.content"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">活动亮点</label>
-                <div class="col-md-9">
-                    <textarea class="form-control" ng-model="activity.highlight"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">接待人数</label>
-                <div class="col-md-9">
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12" style="padding: 20px">
 
-                    <div class="input-group">
-                        <input type="text" class="form-control" ng-model="activity.acceptablePersons">
-                        <span class="input-group-addon">人</span>
+                    <div class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">标题</label>
+                            <div class="col-md-9">
+                                <input class="form-control" type="text" ng-model="activity.title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">活动摘要</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" ng-model="activity.content" rows="6" maxlength="250"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">活动亮点</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" ng-model="activity.highlight" rows="6" maxlength="250"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">接待人数</label>
+                            <div class="col-md-9">
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" ng-model="activity.acceptablePersons">
+                                    <span class="input-group-addon">人</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">接待时间</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" ng-model="activity.availaleTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">行程耗时</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" ng-model="activity.duration"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">费用</label>
+                            <div class="col-md-9">
+
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-cny"></i></span>
+                                    <input type="text" class="form-control" ng-model="activity.fee">
+                                    <span class="input-group-addon">每人</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">费用包含</label>
+                            <div class="col-md-9">
+
+                                <textarea class="form-control" ng-model="activity.feeInclude" rows="6" maxlength="250"></textarea>
+                                <ng-upload-form url="/services/images/activities" auto-upload="true" size-limit="500000"></ng-upload-form>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">费用不含</label>
+                            <div class="col-md-9">
+
+                                <textarea class="form-control" ng-model="activity.feeExclude" rows="6" maxlength="250"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">费用不含</label>
+                            <div class="col-md-9">
+
+                                <textarea class="form-control" ng-model="activity.feeExclude" rows="6" maxlength="250"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" ng-click="save(activity)">更新</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">接待时间</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" ng-model="activity.availaleTime"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">费用</label>
-                <div class="col-md-9">
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-cny"></i></span>
-                        <input type="text" class="form-control" ng-model="activity.fee">
-                        <span class="input-group-addon">每人</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label">费用包含</label>
-                <div class="col-md-9">
-
-                    <textarea class="form-control" ng-model="activity.feeInclude" rows="6" maxlength="250"></textarea>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label">费用不含</label>
-                <div class="col-md-9">
-
-                    <textarea class="form-control" activity.feeExclude></textarea>
-                </div>
-            </div>
-
-            <hr />
-            <div class="form-group">
-                <label class="col-md-3 control-label">行程安排</label>
-                <div class="col-md-9">
-
-                    <textarea class="form-control" ng-model="activity.journey"></textarea>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label">温馨提示</label>
-                <div class="col-md-9">
-
-                    <textarea class="form-control" ng-model="activity.tips"></textarea>
-                </div>
-            </div>
-
-            <button type="button" class="btn btn-primary" data-toggle="dropdown">确定</button>
-
-
-
-
-        </form>
         </div>
-        <div class="col-md-3">
-
+        <div class="col-sm-4">
+            dfdfd
         </div>
     </div>
 </div>
--->
 
-<div class="activity-detail container-fluid" style="min-height: 100%">
+<!--<div class="activity-detail container-fluid" style="min-height: 100%">
     <div class="row">
         <div class="col-sm-3">
 
@@ -144,7 +162,7 @@
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-xs-12" style="padding: 20px">
-                    <form class="form-horizontal">
+                    <div class="form-horizontal">
                         <div class="form-group" ng-show="currentTab === 0">
                             <label for="title" class="col-xs-3 control-label">标题</label>
                             <div class="col-xs-9">
@@ -164,7 +182,8 @@
                             </div>
                         </div>
                         <div class="form-group" ng-show="currentTab === 3">
-                            <strong>图片</strong>
+                            <img-upload wait-gif="images/1.png" upload-to="/services/images/activities" img-height="150px" accept="image/*" class="col-xs-12" button-text="添加照片" button-class="btn btn-info" uploaded="uploaded(imgObject,$index)" remove="remove(img,$index)" object="form.images[$index]"></img-upload>
+
                         </div>
                         <div class="form-group" ng-show="currentTab === 4">
                             <label for="number-of-people" class="col-xs-3 control-label">接待人数</label>
@@ -181,7 +200,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="start-date" placeholder="接待起始日期">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i>
                                             </button>
                                         </span>
                                 </div>
@@ -197,7 +216,7 @@
                             <label for="cost" class="col-xs-3 control-label">费用</label>
                             <div class="col-xs-9">
                                 <div class="input-group">
-                                    <div class="input-group-addon">￥</div>
+                                    <div class="input-group-addon"><i class="fa fa-cny"></i></div>
                                     <input type="number" class="form-control" id="cost" placeholder="费用" min="0.01" step="0.01">
                                     <div class="input-group-addon">每人</div>
                                 </div>
@@ -225,9 +244,11 @@
                             </div>
                         </div>
 
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-3">{{show}}</div>
         </div>
-    </div></div>
+    </div>
+</div>-->
+

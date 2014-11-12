@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('maizi', ['ngRoute', 'ui.bootstrap', 'datetimepicker']);
+        .module('maizi', ['ngRoute', 'ui.bootstrap', 'datetimepicker','blueimp.fileupload']);
 
     angular
         .module('maizi')
@@ -55,6 +55,6 @@
         .module('maizi')
         .run(['$rootScope',
             function ($rootScope) {
-                $rootScope.basePath = '/home/#/';
+                $rootScope.basePath = '/itravel/home/#/';
             }]);
 })();
